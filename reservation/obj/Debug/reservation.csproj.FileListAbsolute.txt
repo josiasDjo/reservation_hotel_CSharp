@@ -1,0 +1,10 @@
+D:\vs 2015 project\reservation\reservation\bin\Debug\reservation.exe.config
+D:\vs 2015 project\reservation\reservation\bin\Debug\reservation.exe
+D:\vs 2015 project\reservation\reservation\bin\Debug\reservation.pdb
+D:\vs 2015 project\reservation\reservation\obj\Debug\reservation.csprojResolveAssemblyReference.cache
+D:\vs 2015 project\reservation\reservation\obj\Debug\reservation.Form1.resources
+D:\vs 2015 project\reservation\reservation\obj\Debug\reservation.Properties.Resources.resources
+D:\vs 2015 project\reservation\reservation\obj\Debug\reservation.csproj.GenerateResource.Cache
+D:\vs 2015 project\reservation\reservation\obj\Debug\reservation.exe
+D:\vs 2015 project\reservation\reservation\obj\Debug\reservation.pdb
+D:\vs 2015 project\reservation\reservation\obj\Debug\reservation.reserver.resources
