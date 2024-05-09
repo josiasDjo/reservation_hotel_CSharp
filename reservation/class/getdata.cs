@@ -5,22 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using reservation;
 
-namespace reservation
+namespace getdataNames
 {
     class getdata
     {
         reserver rsver = new reserver();
-        public void sendEntree()
-        {
-            string bdNom = txtnom.Text;
-            string bdPostNom = txtpostnom.Text;
-            string bdPrenom = txtprenom.Text;
-            string bdtel = txtphone.Text;
-            string bdsexe = txtsexe.Text;
-            string bdDate = dateTimePicker1.Text;
-            string bdTypeChambre = txtTypeChambre.Text;
-            string bdmontant = txtmontant.Text;
-            string bdnumChambre = txtnumChambre.Text;
-        }
+        public string bdNom { get; set; }
+        public string bdPostNom { get; set; }
+        public string bdPrenom { get; set; }
+        public string bdtel { get; set; }
+        public string bdsexe { get; set; }
+        public string bdDate { get; set; }
+        public string bdTypeChambre { get; set; }
+        public string bdmontant { get; set; }
+        public string bdnumChambre { get; set; }
     }
 }

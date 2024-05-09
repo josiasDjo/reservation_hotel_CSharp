@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using connexionDB;
 using System.Data.SqlClient;
 using reservation;
+using System.Windows.Forms;
+using getdataNames;
+using System.Data;
 
 namespace insererDonnee
 {
@@ -15,6 +18,7 @@ namespace insererDonnee
         {
             reserver rsv = new reserver();
             connxion_bd sqlconn = new connxion_bd();
+            getdata gdat = new getdata();
             try
             {
                 sqlconn.sendConn();
@@ -24,10 +28,10 @@ namespace insererDonnee
 
                 using (SqlCommand command = new SqlCommand(querryInsert, sqlconn.reqSql))
                 {
-                    command.Parameters.AddWithValue("@Nom", bdNom);
-                    command.Parameters.AddWithValue("@PostNom", bdPostNom);
-                    command.Parameters.AddWithValue("@Prenom", bdPrenom);
-                    command.Parameters.AddWithValue("@Tel", bdtel);
+                    command.Parameters.AddWithValue("@Nom", gdat.bdNom);
+                    command.Parameters.AddWithValue("@PostNom", gdat.bdPostNom);
+                    command.Parameters.AddWithValue("@Prenom", gdat.bdPrenom);
+                    command.Parameters.AddWithValue("@Tel", gdat.bdtel);
 
 
                     command.ExecuteNonQuery();

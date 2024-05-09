@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using connexionDB;
 using insererDonnee;
+using getdataNames;
 
 namespace reservation
 {
@@ -101,16 +102,18 @@ namespace reservation
         }
 
         public void sendEntree()
-        {                             
-            string bdNom = txtnom.Text;
-            string bdPostNom = txtpostnom.Text;
-            string bdPrenom = txtprenom.Text;
-            string bdtel = txtphone.Text;
-            string bdsexe = txtsexe.Text;
-            string bdDate = dateTimePicker1.Text;
-            string bdTypeChambre = txtTypeChambre.Text;
-            string bdmontant = txtmontant.Text;
-            string bdnumChambre = txtnumChambre.Text;
+        {
+            getdata gdat = new getdata();
+                                       
+            gdat.bdNom = txtnom.Text;
+            gdat.bdPostNom = txtpostnom.Text;
+            gdat.bdPrenom = txtprenom.Text;
+            gdat.bdtel = txtphone.Text;
+            gdat.bdsexe = txtsexe.Text;
+            gdat.bdDate = dateTimePicker1.Text;
+            gdat.bdTypeChambre = txtTypeChambre.Text;
+            gdat.bdmontant = txtmontant.Text;
+            gdat.bdnumChambre = txtnumChambre.Text;
 
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
