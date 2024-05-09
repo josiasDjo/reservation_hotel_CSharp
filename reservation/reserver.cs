@@ -58,22 +58,41 @@ namespace reservation
 
         private void txtTypeChambre_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string valeur_combo = txtTypeChambre.Text;
+            string TypeChambre = txtTypeChambre.Text;
+            string CategorieChbre = txtCategorieChbre.Text;
+            int NbreJrs = int.Parse(txtNbreJrs.Text);
 
 
-            if (valeur_combo == "Chambre single")
+
+            if (TypeChambre == "Chambre à lit simple" && CategorieChbre == "Standard")
             {
-                txtmontant.Text = "30$"; 
-            } else if (valeur_combo == "Chambre double")
+                int montantTotal = NbreJrs * 30;
+                txtmontant.Text = montantTotal.ToString(); 
+            } else if (TypeChambre == "Chambre à lit simple" && CategorieChbre == "VIP")
             {
-                txtmontant.Text = "40$";
+                int montantTotal = NbreJrs * 50;
+                txtmontant.Text = montantTotal.ToString();
+            } else if (TypeChambre == "Chambre à lit double" && CategorieChbre == "Standard")
+            {
+                int montantTotal = NbreJrs * 40;
+                txtmontant.Text = montantTotal.ToString();
+            }
+            else if (TypeChambre == "Chambre à lit double" && CategorieChbre == "VIP")
+            {
+                int montantTotal = NbreJrs * 70;
+                txtmontant.Text = montantTotal.ToString();
+            } else
+            {
+                txtmontant.Text = "Valeur incorrecte ! ";
             }
         }
 
 
         private void button1_Click(object sender, EventArgs e)
         {
-            sendEntree();           
+            insertInDb isrData = new insertInDb();
+            sendEntree();
+            isrData.dataInsert();
         }
 
         public void sendEntree()
@@ -88,11 +107,11 @@ namespace reservation
             gdat.bdtel = txtphone.Text;
             gdat.bdsexe = txtsexe.Text;
             gdat.bdDatePrevu = dateTimePicker1.Text;
-            gdat.bdNombreJours = txtNbreJrs.Text;
+            gdat.bdNombreJours = int.Parse(txtNbreJrs.Text);
             gdat.bdTypeChambre = txtTypeChambre.Text;
-            gdat.bdNumChambre = txtNumChbre.Text;
-            gdat.bdmontant = txtmontant.Text;
-            gdat.bdNumChambre = txtNbreJrs.Text;
+            gdat.bdNumChambre = int.Parse(txtNumChbre.Text);
+            gdat.bdmontant = decimal.Parse(txtmontant.Text);
+            gdat.bdnomCategorie = txtCategorieChbre.Text;
             gdat.bdDatePayement = datetoday;
 
         }

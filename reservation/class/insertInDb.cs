@@ -23,16 +23,16 @@ namespace insererDonnee
             try
             {
                 sqlconn.sendConn();
-                rsv.sendEntree();
-
-                string querryInsert1 = "INSERT INTO [dbo].[tClient] (nom, postNom, prenom, tel) VALUES (@Nom, @PostNom, @Prenom, @Tel) ";
+    
+                string querryInsert1 = "INSERT INTO [dbo].[tClient] (nom, postNom, prenom, sexe, tel) VALUES (@Nomh, @PostNomh, @Prenomh, @sexeh, @Telh) ";
 
                 using (SqlCommand command = new SqlCommand(querryInsert1, sqlconn.reqSql))
                 {
-                    command.Parameters.AddWithValue("@Nom", gdat.bdNom);
-                    command.Parameters.AddWithValue("@PostNom", gdat.bdPostNom);
-                    command.Parameters.AddWithValue("@Prenom", gdat.bdPrenom);
-                    command.Parameters.AddWithValue("@Tel", gdat.bdtel);
+                    command.Parameters.AddWithValue("@Nomh", gdat.bdNom);
+                    command.Parameters.AddWithValue("@PostNomh", gdat.bdPostNom);
+                    command.Parameters.AddWithValue("@Prenomh", gdat.bdPrenom);
+                    command.Parameters.AddWithValue("@sexeh", gdat.bdPrenom);
+                    command.Parameters.AddWithValue("@Telh", gdat.bdtel);
 
 
                     command.ExecuteNonQuery();

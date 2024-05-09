@@ -49,15 +49,6 @@
             this.txtNbreJrs = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dbreservatonDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.db_reservatonDataSet = new reservation.db_reservatonDataSet();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.dbreservatonDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtsexe = new System.Windows.Forms.TextBox();
             this.colNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPostNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPrenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,6 +60,15 @@
             this.ColCategorieChbre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumChambre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColMontant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dbreservatonDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.db_reservatonDataSet = new reservation.db_reservatonDataSet();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dbreservatonDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtsexe = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.txtNumChbre = new System.Windows.Forms.TextBox();
@@ -155,7 +155,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Yu Gothic Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(36, 388);
+            this.label6.Location = new System.Drawing.Point(46, 388);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 23);
             this.label6.TabIndex = 0;
@@ -175,7 +175,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Yu Gothic Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(551, 388);
+            this.label8.Location = new System.Drawing.Point(556, 388);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(86, 23);
             this.label8.TabIndex = 0;
@@ -222,7 +222,7 @@
             // 
             // txtNbreJrs
             // 
-            this.txtNbreJrs.Location = new System.Drawing.Point(692, 329);
+            this.txtNbreJrs.Location = new System.Drawing.Point(178, 327);
             this.txtNbreJrs.Name = "txtNbreJrs";
             this.txtNbreJrs.Size = new System.Drawing.Size(312, 26);
             this.txtNbreJrs.TabIndex = 2;
@@ -231,7 +231,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Yu Gothic Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(41, 328);
+            this.label9.Location = new System.Drawing.Point(556, 327);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(105, 23);
             this.label9.TabIndex = 1;
@@ -268,6 +268,63 @@
             this.dataGridView1.Size = new System.Drawing.Size(972, 281);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // colNom
+            // 
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            this.colNom.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colNom.HeaderText = "Nom";
+            this.colNom.Name = "colNom";
+            // 
+            // colPostNom
+            // 
+            this.colPostNom.HeaderText = "Post-Nom";
+            this.colPostNom.Name = "colPostNom";
+            // 
+            // colPrenom
+            // 
+            this.colPrenom.HeaderText = "Prénom";
+            this.colPrenom.Name = "colPrenom";
+            // 
+            // ColSexe
+            // 
+            this.ColSexe.HeaderText = "Sexe";
+            this.ColSexe.Name = "ColSexe";
+            // 
+            // ColPhone
+            // 
+            this.ColPhone.HeaderText = "Phone";
+            this.ColPhone.Name = "ColPhone";
+            // 
+            // ColDate
+            // 
+            this.ColDate.HeaderText = "Date";
+            this.ColDate.Name = "ColDate";
+            // 
+            // ColNbreJrs
+            // 
+            this.ColNbreJrs.HeaderText = "Nombre de Jours";
+            this.ColNbreJrs.Name = "ColNbreJrs";
+            // 
+            // ColTypeChambre
+            // 
+            this.ColTypeChambre.HeaderText = "Type de Chambre";
+            this.ColTypeChambre.Name = "ColTypeChambre";
+            // 
+            // ColCategorieChbre
+            // 
+            this.ColCategorieChbre.HeaderText = "Catégorie de chambre";
+            this.ColCategorieChbre.Name = "ColCategorieChbre";
+            // 
+            // NumChambre
+            // 
+            this.NumChambre.HeaderText = "N° ";
+            this.NumChambre.Name = "NumChambre";
+            // 
+            // ColMontant
+            // 
+            this.ColMontant.HeaderText = "Montant";
+            this.ColMontant.Name = "ColMontant";
             // 
             // dbreservatonDataSetBindingSource
             // 
@@ -343,68 +400,11 @@
             this.txtsexe.Size = new System.Drawing.Size(312, 26);
             this.txtsexe.TabIndex = 2;
             // 
-            // colNom
-            // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            this.colNom.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colNom.HeaderText = "Nom";
-            this.colNom.Name = "colNom";
-            // 
-            // colPostNom
-            // 
-            this.colPostNom.HeaderText = "Post-Nom";
-            this.colPostNom.Name = "colPostNom";
-            // 
-            // colPrenom
-            // 
-            this.colPrenom.HeaderText = "Prénom";
-            this.colPrenom.Name = "colPrenom";
-            // 
-            // ColSexe
-            // 
-            this.ColSexe.HeaderText = "Sexe";
-            this.ColSexe.Name = "ColSexe";
-            // 
-            // ColPhone
-            // 
-            this.ColPhone.HeaderText = "Phone";
-            this.ColPhone.Name = "ColPhone";
-            // 
-            // ColDate
-            // 
-            this.ColDate.HeaderText = "Date";
-            this.ColDate.Name = "ColDate";
-            // 
-            // ColNbreJrs
-            // 
-            this.ColNbreJrs.HeaderText = "Nombre de Jours";
-            this.ColNbreJrs.Name = "ColNbreJrs";
-            // 
-            // ColTypeChambre
-            // 
-            this.ColTypeChambre.HeaderText = "Type de Chambre";
-            this.ColTypeChambre.Name = "ColTypeChambre";
-            // 
-            // ColCategorieChbre
-            // 
-            this.ColCategorieChbre.HeaderText = "Catégorie de chambre";
-            this.ColCategorieChbre.Name = "ColCategorieChbre";
-            // 
-            // NumChambre
-            // 
-            this.NumChambre.HeaderText = "N° ";
-            this.NumChambre.Name = "NumChambre";
-            // 
-            // ColMontant
-            // 
-            this.ColMontant.HeaderText = "Montant";
-            this.ColMontant.Name = "ColMontant";
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Yu Gothic Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(560, 330);
+            this.label12.Location = new System.Drawing.Point(46, 328);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(126, 23);
             this.label12.TabIndex = 1;
@@ -433,7 +433,7 @@
             this.txtCategorieChbre.Items.AddRange(new object[] {
             "VIP",
             "Standard"});
-            this.txtCategorieChbre.Location = new System.Drawing.Point(178, 329);
+            this.txtCategorieChbre.Location = new System.Drawing.Point(693, 328);
             this.txtCategorieChbre.Name = "txtCategorieChbre";
             this.txtCategorieChbre.Size = new System.Drawing.Size(312, 28);
             this.txtCategorieChbre.TabIndex = 5;

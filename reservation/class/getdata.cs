@@ -17,11 +17,11 @@ namespace getdataNames
         public string bdsexe { get; set; }
         public string bdDatePrevu { get; set; }
         public string bdTypeChambre { get; set; }
-        public string bdmontant { get; set; }
-        public string bdNumChambre { get; set; }
+        public decimal bdmontant { get; set; }
+        public int bdNumChambre { get; set; }
         public string bdnomCategorie { get; set; }
         public string bdDatePayement { get; set; }
-        public string bdNombreJours { get; set; }
+        public int bdNombreJours { get; set; }
     }
 
     class showDatadb
