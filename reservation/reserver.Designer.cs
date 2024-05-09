@@ -46,7 +46,7 @@
             this.txtTypeChambre = new System.Windows.Forms.ComboBox();
             this.txtmontant = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.txtnumChambre = new System.Windows.Forms.TextBox();
+            this.txtNbreJrs = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dbreservatonDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -69,6 +69,12 @@
             this.ColCategorieChbre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumChambre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColMontant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtNumChbre = new System.Windows.Forms.TextBox();
+            this.txtCategorieChbre = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbreservatonDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.db_reservatonDataSet)).BeginInit();
@@ -149,7 +155,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Yu Gothic Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(41, 331);
+            this.label6.Location = new System.Drawing.Point(36, 388);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 23);
             this.label6.TabIndex = 0;
@@ -169,7 +175,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Yu Gothic Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(550, 328);
+            this.label8.Location = new System.Drawing.Point(551, 388);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(86, 23);
             this.label8.TabIndex = 0;
@@ -177,7 +183,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(183, 328);
+            this.dateTimePicker1.Location = new System.Drawing.Point(178, 385);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(312, 26);
             this.dateTimePicker1.TabIndex = 3;
@@ -186,9 +192,9 @@
             // 
             this.txtTypeChambre.FormattingEnabled = true;
             this.txtTypeChambre.Items.AddRange(new object[] {
-            "Chambre single",
-            "Chambre double"});
-            this.txtTypeChambre.Location = new System.Drawing.Point(692, 271);
+            "Chambre à lit simple",
+            "Chambre à lit double"});
+            this.txtTypeChambre.Location = new System.Drawing.Point(693, 269);
             this.txtTypeChambre.Name = "txtTypeChambre";
             this.txtTypeChambre.Size = new System.Drawing.Size(312, 28);
             this.txtTypeChambre.TabIndex = 5;
@@ -196,7 +202,7 @@
             // 
             // txtmontant
             // 
-            this.txtmontant.Location = new System.Drawing.Point(692, 327);
+            this.txtmontant.Location = new System.Drawing.Point(693, 387);
             this.txtmontant.Name = "txtmontant";
             this.txtmontant.Size = new System.Drawing.Size(312, 26);
             this.txtmontant.TabIndex = 2;
@@ -206,7 +212,7 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.button1.Font = new System.Drawing.Font("Yu Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(692, 390);
+            this.button1.Location = new System.Drawing.Point(27, 443);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(312, 47);
             this.button1.TabIndex = 6;
@@ -214,22 +220,22 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // txtnumChambre
+            // txtNbreJrs
             // 
-            this.txtnumChambre.Location = new System.Drawing.Point(178, 273);
-            this.txtnumChambre.Name = "txtnumChambre";
-            this.txtnumChambre.Size = new System.Drawing.Size(312, 26);
-            this.txtnumChambre.TabIndex = 2;
+            this.txtNbreJrs.Location = new System.Drawing.Point(692, 329);
+            this.txtNbreJrs.Name = "txtNbreJrs";
+            this.txtNbreJrs.Size = new System.Drawing.Size(312, 26);
+            this.txtNbreJrs.TabIndex = 2;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Yu Gothic Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(41, 276);
+            this.label9.Location = new System.Drawing.Point(41, 328);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(131, 23);
+            this.label9.Size = new System.Drawing.Size(105, 23);
             this.label9.TabIndex = 1;
-            this.label9.Text = "N° Chambre";
+            this.label9.Text = "Catégorie ";
             // 
             // dataGridView1
             // 
@@ -256,7 +262,7 @@
             this.ColCategorieChbre,
             this.NumChambre,
             this.ColMontant});
-            this.dataGridView1.Location = new System.Drawing.Point(45, 454);
+            this.dataGridView1.Location = new System.Drawing.Point(45, 515);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(972, 281);
@@ -394,25 +400,96 @@
             this.ColMontant.HeaderText = "Montant";
             this.ColMontant.Name = "ColMontant";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Yu Gothic Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(560, 330);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(126, 23);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "Nbre de Jour";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Yu Gothic Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(41, 277);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(131, 23);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "N° Chambre";
+            // 
+            // txtNumChbre
+            // 
+            this.txtNumChbre.Location = new System.Drawing.Point(178, 274);
+            this.txtNumChbre.Name = "txtNumChbre";
+            this.txtNumChbre.Size = new System.Drawing.Size(312, 26);
+            this.txtNumChbre.TabIndex = 2;
+            // 
+            // txtCategorieChbre
+            // 
+            this.txtCategorieChbre.FormattingEnabled = true;
+            this.txtCategorieChbre.Items.AddRange(new object[] {
+            "VIP",
+            "Standard"});
+            this.txtCategorieChbre.Location = new System.Drawing.Point(178, 329);
+            this.txtCategorieChbre.Name = "txtCategorieChbre";
+            this.txtCategorieChbre.Size = new System.Drawing.Size(312, 28);
+            this.txtCategorieChbre.TabIndex = 5;
+            this.txtCategorieChbre.SelectedIndexChanged += new System.EventHandler(this.txtTypeChambre_SelectedIndexChanged);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.button2.Font = new System.Drawing.Font("Yu Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button2.Location = new System.Drawing.Point(392, 443);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(312, 47);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Supprimer";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.button3.Font = new System.Drawing.Font("Yu Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button3.Location = new System.Drawing.Point(729, 443);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(312, 47);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "Modifier";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button1_Click);
+            // 
             // reserver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1063, 615);
+            this.ClientSize = new System.Drawing.Size(1063, 679);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.txtCategorieChbre);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtTypeChambre);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.txtmontant);
-            this.Controls.Add(this.txtnumChambre);
+            this.Controls.Add(this.txtNumChbre);
+            this.Controls.Add(this.txtNbreJrs);
             this.Controls.Add(this.txtsexe);
             this.Controls.Add(this.txtphone);
             this.Controls.Add(this.txtpostnom);
             this.Controls.Add(this.txtprenom);
             this.Controls.Add(this.txtnom);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label5);
@@ -454,7 +531,7 @@
         private System.Windows.Forms.ComboBox txtTypeChambre;
         private System.Windows.Forms.TextBox txtmontant;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txtnumChambre;
+        private System.Windows.Forms.TextBox txtNbreJrs;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource dbreservatonDataSetBindingSource;
@@ -477,5 +554,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColCategorieChbre;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumChambre;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColMontant;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtNumChbre;
+        private System.Windows.Forms.ComboBox txtCategorieChbre;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }

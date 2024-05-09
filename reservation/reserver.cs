@@ -58,7 +58,7 @@ namespace reservation
                             string numChambrebd = readDonnee["numChambre"].ToString();
                             string montantPayebd = readDonnee["montant"].ToString();
 
-                            dataGridView1.Rows.Add(nombd, postNombd, prenombd, telbd);
+                            dataGridView1.Rows.Add(nombd, postNombd, prenombd, sexebd, telbd, datedb, nbreJoursbd, typeChambrebd, categorieChbrebd, numChambrebd, montantPayebd);
                         }
                         readDonnee.Close();
                         readDonnee.Dispose();
@@ -119,9 +119,11 @@ namespace reservation
             gdat.bdtel = txtphone.Text;
             gdat.bdsexe = txtsexe.Text;
             gdat.bdDatePrevu = dateTimePicker1.Text;
+            gdat.bdNombreJours = txtNbreJrs.Text;
             gdat.bdTypeChambre = txtTypeChambre.Text;
+            gdat.bdNumChambre = txtNumChbre.Text;
             gdat.bdmontant = txtmontant.Text;
-            gdat.bdNumChambre = txtnumChambre.Text;
+            gdat.bdNumChambre = txtNbreJrs.Text;
             gdat.bdDatePayement = datetoday;
 
         }
