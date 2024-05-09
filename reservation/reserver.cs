@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using connexionDB;
+using insererDonnee;
 
 namespace reservation
 {
@@ -20,7 +21,7 @@ namespace reservation
 
             InitializeComponent();
 
-            //afficherData();
+            afficherData();
         }
 
 
@@ -36,8 +37,7 @@ namespace reservation
             try
             {
                 sqlconn.sendConn();
-                sqlconn.reqSql.Open();
-                string reqSelect = "SELECT * FROM tclients";
+                string reqSelect = "SELECT * FROM [dbo].[tClient]";
 
                 using (SqlCommand cmd = new SqlCommand(reqSelect, sqlconn.reqSql))
                 {
@@ -49,13 +49,9 @@ namespace reservation
                             string postNombd = readDonnee["postNom"].ToString();
                             string prenombd = readDonnee["prenom"].ToString();
                             string telbd = readDonnee["tel"].ToString();
-                            string emailbd = readDonnee["email"].ToString();
-                            string datebd = readDonnee["date"].ToString();
-                            string typeChambrebd = readDonnee["typeChamnbre"].ToString();
-                            string numChambre = readDonnee["numChambre"].ToString();
-                            string montant = readDonnee["montant"].ToString();
 
-                            dataGridView1.Rows.Add(nombd, postNombd, prenombd, telbd, emailbd, datebd, typeChambrebd, numChambre, montant);
+
+                            dataGridView1.Rows.Add(nombd, postNombd, prenombd, telbd);
                         }
                         readDonnee.Close();
                         readDonnee.Dispose();
@@ -63,8 +59,6 @@ namespace reservation
 
                     }
                 }
-
-                MessageBox.Show("Réussi !! ");
                
             }
             catch(Exception ex)
@@ -74,10 +68,10 @@ namespace reservation
             finally
             {
                 MessageBox.Show("Finaly!! ");
-                if (sqlconn.reqSql != null)
+                if (sqlconn.reqSql != null && sqlconn.reqSql.State == ConnectionState.Open)
                 {
                     sqlconn.reqSql.Close();
-                }               
+                }
             }
         }
 
@@ -100,47 +94,21 @@ namespace reservation
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void button1_Click(object sender, EventArgs e)
         {
-            connxion_bd sqlconn = new connxion_bd();
+            
 
-            try
-            {
+            string bdNom = txtnom.Text;
+            string bdPostNom = txtpostnom.Text;
+            string bdPrenom = txtprenom.Text;
+            string bdtel = txtphone.Text;
+            string bdsexe = txtsexe.Text;
+            string bdDate = dateTimePicker1.Text;
+            string bdTypeChambre = txtTypeChambre.Text;
+            string bdmontant = txtmontant.Text;
+            string bdnumChambre = txtnumChambre.Text;
 
-                string bdNom = txtnom.Text;
-                string bdPostNom = txtpostnom.Text;
-                string bdPrenom = txtprenom.Text;
-                string bdtel = txtphone.Text;
-                string bdDate = dateTimePicker1.Text;
-                string bdTypeChambre = txtTypeChambre.Text;
-                string bdmontant = txtmontant.Text;
-                string bdnumChambre = txtnumChambre.Text;
-
-                string querryInsert = "INSERT INTO [dbo].[tClient] (nom, postNom, prenom, tel) VALUES (@Nom, @PostNom, @Prenom, @Tel) ";
-
-                sqlconn.sendConn();
-                sqlconn.reqSql.Open();
-                using (SqlCommand command = new SqlCommand(querryInsert, sqlconn.reqSql))
-                {
-                    command.Parameters.AddWithValue("@Nom", bdNom);
-                    command.Parameters.AddWithValue("@PostNom", bdPostNom);
-                    command.Parameters.AddWithValue("@Prenom", bdPrenom);
-                    command.Parameters.AddWithValue("@Tel", bdtel);
-
-                        
-                    command.ExecuteNonQuery();
-                }               
-           
-                MessageBox.Show("Enregistrement réussi !! ");
-                sqlconn.reqSql.Close();
-            } catch (Exception exc)
-            {
-                MessageBox.Show("Une erreur est survenue ! " + exc);
-            }
-            finally
-            {
-                //             
-            }
+            
 
         }
 

@@ -16,11 +16,10 @@ namespace connexionDB
             string connexion = "Data Source=DJODEV;Initial Catalog=db_reservaton;Integrated Security=True";
             try
             {
-                using (SqlConnection reqSql = new SqlConnection(connexion))
-                {
-                    //reqSql.Open();
-                    MessageBox.Show("Connexion réussie ! ");
-                }
+                reqSql = new SqlConnection(connexion);
+                reqSql.Open();
+                //MessageBox.Show("Connexion réussie ! ");
+                
             } catch(SqlException exc)
             {
                 MessageBox.Show("Erreur : " + exc.Message);

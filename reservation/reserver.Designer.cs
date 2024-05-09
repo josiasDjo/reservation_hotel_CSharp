@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -49,15 +49,6 @@
             this.txtnumChambre = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.colNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPostNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColTypeChambre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumChambre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColMontant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dbreservatonDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.db_reservatonDataSet = new reservation.db_reservatonDataSet();
             this.erreur = new System.Windows.Forms.Label();
@@ -65,11 +56,23 @@
             this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
+            this.dbreservatonDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.colNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPostNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColTypeChambre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumChambre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColMontant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtsexe = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbreservatonDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.db_reservatonDataSet)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dbreservatonDataSetBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -106,7 +109,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Yu Gothic Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(550, 114);
+            this.label5.Location = new System.Drawing.Point(542, 62);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 23);
             this.label5.TabIndex = 1;
@@ -135,7 +138,7 @@
             // 
             // txtphone
             // 
-            this.txtphone.Location = new System.Drawing.Point(687, 111);
+            this.txtphone.Location = new System.Drawing.Point(679, 59);
             this.txtphone.Name = "txtphone";
             this.txtphone.Size = new System.Drawing.Size(312, 26);
             this.txtphone.TabIndex = 2;
@@ -228,82 +231,32 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colNom,
             this.colPostNom,
             this.colPrenom,
             this.ColPhone,
-            this.ColEmail,
             this.ColDate,
             this.ColTypeChambre,
             this.NumChambre,
             this.ColMontant});
-            this.dataGridView1.DataSource = this.dbreservatonDataSetBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(45, 454);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(972, 281);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // colNom
-            // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.colNom.DefaultCellStyle = dataGridViewCellStyle4;
-            this.colNom.HeaderText = "Nom";
-            this.colNom.Name = "colNom";
-            // 
-            // colPostNom
-            // 
-            this.colPostNom.HeaderText = "Post-Nom";
-            this.colPostNom.Name = "colPostNom";
-            // 
-            // colPrenom
-            // 
-            this.colPrenom.HeaderText = "Prénom";
-            this.colPrenom.Name = "colPrenom";
-            // 
-            // ColPhone
-            // 
-            this.ColPhone.HeaderText = "Phone";
-            this.ColPhone.Name = "ColPhone";
-            // 
-            // ColEmail
-            // 
-            this.ColEmail.HeaderText = "Email";
-            this.ColEmail.Name = "ColEmail";
-            // 
-            // ColDate
-            // 
-            this.ColDate.HeaderText = "Date";
-            this.ColDate.Name = "ColDate";
-            // 
-            // ColTypeChambre
-            // 
-            this.ColTypeChambre.HeaderText = "Type Chambre";
-            this.ColTypeChambre.Name = "ColTypeChambre";
-            // 
-            // NumChambre
-            // 
-            this.NumChambre.HeaderText = "N° ";
-            this.NumChambre.Name = "NumChambre";
-            // 
-            // ColMontant
-            // 
-            this.ColMontant.HeaderText = "Montant";
-            this.ColMontant.Name = "ColMontant";
             // 
             // dbreservatonDataSetBindingSource
             // 
@@ -366,6 +319,70 @@
             this.label11.TabIndex = 11;
             this.label11.Text = "Autres Informations";
             // 
+            // dbreservatonDataSetBindingSource1
+            // 
+            this.dbreservatonDataSetBindingSource1.DataSource = this.db_reservatonDataSet;
+            this.dbreservatonDataSetBindingSource1.Position = 0;
+            // 
+            // colNom
+            // 
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            this.colNom.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colNom.HeaderText = "Nom";
+            this.colNom.Name = "colNom";
+            // 
+            // colPostNom
+            // 
+            this.colPostNom.HeaderText = "Post-Nom";
+            this.colPostNom.Name = "colPostNom";
+            // 
+            // colPrenom
+            // 
+            this.colPrenom.HeaderText = "Prénom";
+            this.colPrenom.Name = "colPrenom";
+            // 
+            // ColPhone
+            // 
+            this.ColPhone.HeaderText = "Phone";
+            this.ColPhone.Name = "ColPhone";
+            // 
+            // ColDate
+            // 
+            this.ColDate.HeaderText = "Date";
+            this.ColDate.Name = "ColDate";
+            // 
+            // ColTypeChambre
+            // 
+            this.ColTypeChambre.HeaderText = "Type Chambre";
+            this.ColTypeChambre.Name = "ColTypeChambre";
+            // 
+            // NumChambre
+            // 
+            this.NumChambre.HeaderText = "N° ";
+            this.NumChambre.Name = "NumChambre";
+            // 
+            // ColMontant
+            // 
+            this.ColMontant.HeaderText = "Montant";
+            this.ColMontant.Name = "ColMontant";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Yu Gothic Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(542, 114);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(54, 23);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Sexe";
+            // 
+            // txtsexe
+            // 
+            this.txtsexe.Location = new System.Drawing.Point(679, 111);
+            this.txtsexe.Name = "txtsexe";
+            this.txtsexe.Size = new System.Drawing.Size(312, 26);
+            this.txtsexe.TabIndex = 2;
+            // 
             // reserver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -380,11 +397,13 @@
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.txtmontant);
             this.Controls.Add(this.txtnumChambre);
+            this.Controls.Add(this.txtsexe);
             this.Controls.Add(this.txtphone);
             this.Controls.Add(this.txtpostnom);
             this.Controls.Add(this.txtprenom);
             this.Controls.Add(this.txtnom);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
@@ -402,6 +421,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dbreservatonDataSetBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -434,14 +454,16 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.BindingSource dbreservatonDataSetBindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNom;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPostNom;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrenom;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColPhone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColEmail;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTypeChambre;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumChambre;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColMontant;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtsexe;
     }
 }
