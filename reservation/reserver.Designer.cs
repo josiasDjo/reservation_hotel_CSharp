@@ -51,6 +51,15 @@
             this.txtnumChambre = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.colNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPostNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColTypeChambre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumChambre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColMontant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dbreservatonDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.db_reservatonDataSet = new reservation.db_reservatonDataSet();
             this.erreur = new System.Windows.Forms.Label();
@@ -58,15 +67,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
-            this.ColMontant = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumChambre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColTypeChambre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPostNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbreservatonDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.db_reservatonDataSet)).BeginInit();
@@ -220,9 +220,9 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.button1.Font = new System.Drawing.Font("Yu Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(692, 398);
+            this.button1.Location = new System.Drawing.Point(692, 390);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(312, 39);
+            this.button1.Size = new System.Drawing.Size(312, 47);
             this.button1.TabIndex = 6;
             this.button1.Text = "Valider";
             this.button1.UseVisualStyleBackColor = false;
@@ -277,6 +277,53 @@
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // colNom
+            // 
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.colNom.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colNom.HeaderText = "Nom";
+            this.colNom.Name = "colNom";
+            // 
+            // colPostNom
+            // 
+            this.colPostNom.HeaderText = "Post-Nom";
+            this.colPostNom.Name = "colPostNom";
+            // 
+            // colPrenom
+            // 
+            this.colPrenom.HeaderText = "Prénom";
+            this.colPrenom.Name = "colPrenom";
+            // 
+            // ColPhone
+            // 
+            this.ColPhone.HeaderText = "Phone";
+            this.ColPhone.Name = "ColPhone";
+            // 
+            // ColEmail
+            // 
+            this.ColEmail.HeaderText = "Email";
+            this.ColEmail.Name = "ColEmail";
+            // 
+            // ColDate
+            // 
+            this.ColDate.HeaderText = "Date";
+            this.ColDate.Name = "ColDate";
+            // 
+            // ColTypeChambre
+            // 
+            this.ColTypeChambre.HeaderText = "Type Chambre";
+            this.ColTypeChambre.Name = "ColTypeChambre";
+            // 
+            // NumChambre
+            // 
+            this.NumChambre.HeaderText = "N° ";
+            this.NumChambre.Name = "NumChambre";
+            // 
+            // ColMontant
+            // 
+            this.ColMontant.HeaderText = "Montant";
+            this.ColMontant.Name = "ColMontant";
+            // 
             // dbreservatonDataSetBindingSource
             // 
             this.dbreservatonDataSetBindingSource.DataSource = this.db_reservatonDataSet;
@@ -302,7 +349,7 @@
             this.panel1.Controls.Add(this.label10);
             this.panel1.Location = new System.Drawing.Point(3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1072, 33);
+            this.panel1.Size = new System.Drawing.Size(1072, 40);
             this.panel1.TabIndex = 9;
             // 
             // label10
@@ -323,7 +370,7 @@
             this.panel2.Controls.Add(this.label11);
             this.panel2.Location = new System.Drawing.Point(3, 213);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1072, 33);
+            this.panel2.Size = new System.Drawing.Size(1072, 38);
             this.panel2.TabIndex = 9;
             // 
             // label11
@@ -337,53 +384,6 @@
             this.label11.Size = new System.Drawing.Size(208, 26);
             this.label11.TabIndex = 11;
             this.label11.Text = "Autres Informations";
-            // 
-            // ColMontant
-            // 
-            this.ColMontant.HeaderText = "Montant";
-            this.ColMontant.Name = "ColMontant";
-            // 
-            // NumChambre
-            // 
-            this.NumChambre.HeaderText = "N° ";
-            this.NumChambre.Name = "NumChambre";
-            // 
-            // ColTypeChambre
-            // 
-            this.ColTypeChambre.HeaderText = "Type Chambre";
-            this.ColTypeChambre.Name = "ColTypeChambre";
-            // 
-            // ColDate
-            // 
-            this.ColDate.HeaderText = "Date";
-            this.ColDate.Name = "ColDate";
-            // 
-            // ColEmail
-            // 
-            this.ColEmail.HeaderText = "Email";
-            this.ColEmail.Name = "ColEmail";
-            // 
-            // ColPhone
-            // 
-            this.ColPhone.HeaderText = "Phone";
-            this.ColPhone.Name = "ColPhone";
-            // 
-            // colPrenom
-            // 
-            this.colPrenom.HeaderText = "Prénom";
-            this.colPrenom.Name = "colPrenom";
-            // 
-            // colPostNom
-            // 
-            this.colPostNom.HeaderText = "Post-Nom";
-            this.colPostNom.Name = "colPostNom";
-            // 
-            // colNom
-            // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.colNom.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colNom.HeaderText = "Nom";
-            this.colNom.Name = "colNom";
             // 
             // reserver
             // 

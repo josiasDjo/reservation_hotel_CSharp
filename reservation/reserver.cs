@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using connexionDB;
 
 namespace reservation
 {
@@ -31,19 +32,14 @@ namespace reservation
         
         public void afficherData()
         {
-            string connexion = "Data Source=DJODEV;Initial Catalog=db_reservaton;Integrated Security=True";
-
+            connxion_bd sqlconn = new connxion_bd();
             try
             {
-            SqlConnection sqlconn = new SqlConnection(connexion);
+                sqlconn.sendConn();
 
+                string reqSelect = "SELECT * FROM tclients";
 
-            sqlconn.Open();
-
-            string reqSelect = "SELECT * FROM tclients";
-
-
-                using (SqlCommand cmd = new SqlCommand(reqSelect, sqlconn))
+                using (SqlCommand cmd = new SqlCommand(reqSelect, sqlconn.reqSql))
                 {
                     using (SqlDataReader readDonnee = cmd.ExecuteReader())
                     {
@@ -70,7 +66,7 @@ namespace reservation
 
                 MessageBox.Show("Réussi !! ");
 
-                sqlconn.Close();
+                sqlconn.reqSql.Close();
             }
             catch
             {
@@ -80,6 +76,11 @@ namespace reservation
             {
                 MessageBox.Show("Finaly!! ");
             }
+        }
+
+        private void OpenConnection()
+        {
+            throw new NotImplementedException();
         }
 
         private void txtTypeChambre_SelectedIndexChanged(object sender, EventArgs e)
@@ -98,13 +99,10 @@ namespace reservation
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string connexion = "Data Source=DJODEV;Initial Catalog=db_reservaton;Integrated Security=True";
+            connxion_bd sqlconn = new connxion_bd();
+
             try
             {
-
-                SqlConnection sqlconn = new SqlConnection(connexion);
-
-                sqlconn.Open();
 
                 string bdNom = txtnom.Text;
                 string bdPostNom = txtpostnom.Text;
@@ -116,28 +114,32 @@ namespace reservation
                 string bdmontant = txtmontant.Text;
                 string bdnumChambre = txtnumChambre.Text;
 
-                string querryInsert = "INSERT INTO tclient (nom, postNom, prenom, tel, email) VALUES ('" + bdNom + "', '" + bdPostNom + "', '"+ bdPrenom+"', '"+ bdtel +"', '"+ bdEmail+"') ";
+                string querryInsert = "INSERT INTO tclient (nom, postNom, prenom, tel, email) VALUES (@Nom, @PostNom, @Prenom, @Tel, @Email) ";
 
-                string querryInsert2 = "INSERT INTO tChambre (numChambre, numEtage, typeChambre) ";
+                sqlconn.sendConn();
+ 
+                    using (SqlCommand command = new SqlCommand(querryInsert, sqlconn.reqSql))
+                    {
+                        command.Parameters.AddWithValue("@Nom", bdNom);
+                        command.Parameters.AddWithValue("@PostNom", bdPostNom);
+                        command.Parameters.AddWithValue("@Prenom", bdPrenom);
+                        command.Parameters.AddWithValue("@Tel", bdtel);
+                        command.Parameters.AddWithValue("@Email", bdEmail);
 
-                string querryInsert3 = "INSERT INTO tReservation (etat, date)";
+                        sqlconn.reqSql.Open();
+                        command.ExecuteNonQuery();
+                    }
+                
 
-                string querryInsert4 = "INSERT INTO tPayement (methodePaye, montant, datePaye)";
-
-                SqlCommand cmd = new SqlCommand(querryInsert,sqlconn);
-                SqlCommand cmd2 = new SqlCommand(querryInsert2, sqlconn);
-                SqlCommand cmd3 = new SqlCommand(querryInsert3, sqlconn);
-                SqlCommand cmd4 = new SqlCommand(querryInsert4, sqlconn);
-
-                sqlconn.Close();
+           
                 MessageBox.Show("Enregistrement réussi !! ");
             } catch (Exception exc)
             {
-                MessageBox.Show("Une erreur est survenue ! ");
+                MessageBox.Show("Une erreur est survenue ! " + exc);
             }
             finally
             {
-                //sqlConn.Close(); 
+                sqlconn.reqSql.Close(); 
             }
 
         }
