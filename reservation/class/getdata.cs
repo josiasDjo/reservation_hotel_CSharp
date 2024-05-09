@@ -24,9 +24,8 @@ namespace getdataNames
         public string bdNombreJours { get; set; }
     }
 
-    class showData
+    class showDatadb
     {
-        //, , , , telbd, , , , , , 
         public string nombd { get; set; }
         public string postNombd { get; set; }
         public string prenombd { get; set; }
