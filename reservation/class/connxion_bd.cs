@@ -10,8 +10,7 @@ namespace connexionDB
 {
     class connxion_bd
     {
-        internal SqlConnection reqSql;
-
+        public SqlConnection reqSql;
         public void sendConn()
         {
             string connexion = "Data Source=DJODEV;Initial Catalog=db_reservaton;Integrated Security=True";
@@ -19,12 +18,12 @@ namespace connexionDB
             {
                 using (SqlConnection reqSql = new SqlConnection(connexion))
                 {
-                    reqSql.Open();
+                    //reqSql.Open();
                     MessageBox.Show("Connexion réussie ! ");
                 }
             } catch(SqlException exc)
             {
-                MessageBox.Show("Erreur : " + exc);
+                MessageBox.Show("Erreur : " + exc.Message);
             }
         }
     }

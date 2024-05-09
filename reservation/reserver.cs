@@ -20,7 +20,7 @@ namespace reservation
 
             InitializeComponent();
 
-            afficherData();
+            //afficherData();
         }
 
 
@@ -36,7 +36,7 @@ namespace reservation
             try
             {
                 sqlconn.sendConn();
-
+                sqlconn.reqSql.Open();
                 string reqSelect = "SELECT * FROM tclients";
 
                 using (SqlCommand cmd = new SqlCommand(reqSelect, sqlconn.reqSql))
@@ -65,16 +65,19 @@ namespace reservation
                 }
 
                 MessageBox.Show("Réussi !! ");
-
-                sqlconn.reqSql.Close();
+               
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("Echec !! ");
+                MessageBox.Show("Echec !! " + ex.Message);
             }
             finally
             {
                 MessageBox.Show("Finaly!! ");
+                if (sqlconn.reqSql != null)
+                {
+                    sqlconn.reqSql.Close();
+                }               
             }
         }
 
@@ -108,38 +111,35 @@ namespace reservation
                 string bdPostNom = txtpostnom.Text;
                 string bdPrenom = txtprenom.Text;
                 string bdtel = txtphone.Text;
-                string bdEmail = txtemail.Text;
                 string bdDate = dateTimePicker1.Text;
                 string bdTypeChambre = txtTypeChambre.Text;
                 string bdmontant = txtmontant.Text;
                 string bdnumChambre = txtnumChambre.Text;
 
-                string querryInsert = "INSERT INTO tclient (nom, postNom, prenom, tel, email) VALUES (@Nom, @PostNom, @Prenom, @Tel, @Email) ";
+                string querryInsert = "INSERT INTO [dbo].[tClient] (nom, postNom, prenom, tel) VALUES (@Nom, @PostNom, @Prenom, @Tel) ";
 
                 sqlconn.sendConn();
- 
-                    using (SqlCommand command = new SqlCommand(querryInsert, sqlconn.reqSql))
-                    {
-                        command.Parameters.AddWithValue("@Nom", bdNom);
-                        command.Parameters.AddWithValue("@PostNom", bdPostNom);
-                        command.Parameters.AddWithValue("@Prenom", bdPrenom);
-                        command.Parameters.AddWithValue("@Tel", bdtel);
-                        command.Parameters.AddWithValue("@Email", bdEmail);
+                sqlconn.reqSql.Open();
+                using (SqlCommand command = new SqlCommand(querryInsert, sqlconn.reqSql))
+                {
+                    command.Parameters.AddWithValue("@Nom", bdNom);
+                    command.Parameters.AddWithValue("@PostNom", bdPostNom);
+                    command.Parameters.AddWithValue("@Prenom", bdPrenom);
+                    command.Parameters.AddWithValue("@Tel", bdtel);
 
-                        sqlconn.reqSql.Open();
-                        command.ExecuteNonQuery();
-                    }
-                
-
+                        
+                    command.ExecuteNonQuery();
+                }               
            
                 MessageBox.Show("Enregistrement réussi !! ");
+                sqlconn.reqSql.Close();
             } catch (Exception exc)
             {
                 MessageBox.Show("Une erreur est survenue ! " + exc);
             }
             finally
             {
-                sqlconn.reqSql.Close(); 
+                //             
             }
 
         }

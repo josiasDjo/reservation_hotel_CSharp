@@ -29,15 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtnom = new System.Windows.Forms.TextBox();
-            this.txtemail = new System.Windows.Forms.TextBox();
             this.txtprenom = new System.Windows.Forms.TextBox();
             this.txtpostnom = new System.Windows.Forms.TextBox();
             this.txtphone = new System.Windows.Forms.TextBox();
@@ -94,16 +92,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Post-Nom";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Yu Gothic Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(550, 62);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 23);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Email";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -130,13 +118,6 @@
             this.txtnom.Name = "txtnom";
             this.txtnom.Size = new System.Drawing.Size(312, 26);
             this.txtnom.TabIndex = 2;
-            // 
-            // txtemail
-            // 
-            this.txtemail.Location = new System.Drawing.Point(692, 59);
-            this.txtemail.Name = "txtemail";
-            this.txtemail.Size = new System.Drawing.Size(312, 26);
-            this.txtemail.TabIndex = 2;
             // 
             // txtprenom
             // 
@@ -250,14 +231,14 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colNom,
@@ -279,8 +260,8 @@
             // 
             // colNom
             // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.colNom.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.colNom.DefaultCellStyle = dataGridViewCellStyle4;
             this.colNom.HeaderText = "Nom";
             this.colNom.Name = "colNom";
             // 
@@ -402,12 +383,10 @@
             this.Controls.Add(this.txtphone);
             this.Controls.Add(this.txtpostnom);
             this.Controls.Add(this.txtprenom);
-            this.Controls.Add(this.txtemail);
             this.Controls.Add(this.txtnom);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -432,11 +411,9 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtnom;
-        private System.Windows.Forms.TextBox txtemail;
         private System.Windows.Forms.TextBox txtprenom;
         private System.Windows.Forms.TextBox txtpostnom;
         private System.Windows.Forms.TextBox txtphone;
