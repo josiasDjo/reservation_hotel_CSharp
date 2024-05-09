@@ -19,14 +19,15 @@ namespace insererDonnee
             reserver rsv = new reserver();
             connxion_bd sqlconn = new connxion_bd();
             getdata gdat = new getdata();
+
             try
             {
                 sqlconn.sendConn();
                 rsv.sendEntree();
 
-                string querryInsert = "INSERT INTO [dbo].[tClient] (nom, postNom, prenom, tel) VALUES (@Nom, @PostNom, @Prenom, @Tel) ";
+                string querryInsert1 = "INSERT INTO [dbo].[tClient] (nom, postNom, prenom, tel) VALUES (@Nom, @PostNom, @Prenom, @Tel) ";
 
-                using (SqlCommand command = new SqlCommand(querryInsert, sqlconn.reqSql))
+                using (SqlCommand command = new SqlCommand(querryInsert1, sqlconn.reqSql))
                 {
                     command.Parameters.AddWithValue("@Nom", gdat.bdNom);
                     command.Parameters.AddWithValue("@PostNom", gdat.bdPostNom);
@@ -37,7 +38,55 @@ namespace insererDonnee
                     command.ExecuteNonQuery();
                 }
 
-                //table   
+                string querryInsert2 = "INSERT INTO [dbo].[tChambre] (numChambre, typeChambre) VALUES (@numChambre, @typeChambre) ";
+
+                using (SqlCommand command = new SqlCommand(querryInsert2, sqlconn.reqSql))
+                {
+                    command.Parameters.AddWithValue("@Nom", gdat.bdNom);
+                    command.Parameters.AddWithValue("@PostNom", gdat.bdPostNom);
+                    command.Parameters.AddWithValue("@Prenom", gdat.bdPrenom);
+                    command.Parameters.AddWithValue("@Tel", gdat.bdtel);
+
+
+                    command.ExecuteNonQuery();
+                }
+
+                string querryInsert3 = "INSERT INTO [dbo].[tCategorieCh] (nomCategorie) VALUES (@nomCategorie) ";
+
+                using (SqlCommand command = new SqlCommand(querryInsert3, sqlconn.reqSql))
+                {
+                    command.Parameters.AddWithValue("@nomCategorie", gdat.bdnomCategorie);
+
+                    command.ExecuteNonQuery();
+                }
+
+                string querryInsert4 = "INSERT INTO [dbo].[tPayement] (montant, datePayement) VALUES (@Nom, @PostNom, @Prenom, @Tel) ";
+
+                using (SqlCommand command = new SqlCommand(querryInsert4, sqlconn.reqSql))
+                {
+                    command.Parameters.AddWithValue("@Nom", gdat.bdNom);
+                    command.Parameters.AddWithValue("@PostNom", gdat.bdPostNom);
+                    command.Parameters.AddWithValue("@Prenom", gdat.bdPrenom);
+                    command.Parameters.AddWithValue("@Tel", gdat.bdtel);
+
+
+                    command.ExecuteNonQuery();
+                }
+
+                string querryInsert5 = "INSERT INTO [dbo].[tReservation] (datePrevu, nombreJours) VALUES (@Nom, @PostNom, @Prenom, @Tel) ";
+
+                using (SqlCommand command = new SqlCommand(querryInsert5, sqlconn.reqSql))
+                {
+                    command.Parameters.AddWithValue("@Nom", gdat.bdNom);
+                    command.Parameters.AddWithValue("@PostNom", gdat.bdPostNom);
+                    command.Parameters.AddWithValue("@Prenom", gdat.bdPrenom);
+                    command.Parameters.AddWithValue("@Tel", gdat.bdtel);
+
+
+                    command.ExecuteNonQuery();
+                }
+
+
 
                 MessageBox.Show("Enregistrement réussi !! ");
                 sqlconn.reqSql.Close();
