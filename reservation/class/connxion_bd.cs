@@ -18,7 +18,6 @@ namespace connexionDB
             {
                 reqSql = new SqlConnection(connexion);
                 reqSql.Open();
-                //MessageBox.Show("Connexion réussie ! ");
                 
             } catch(SqlException exc)
             {

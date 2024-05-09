@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using connexionDB;
 using insererDonnee;
 using getdataNames;
+using affichageDonnee;
 
 namespace reservation
 {
@@ -34,52 +35,20 @@ namespace reservation
         
         public void afficherData()
         {
-            connxion_bd sqlconn = new connxion_bd();
-            try
-            {
-                sqlconn.sendConn();
-                string reqSelect = "SELECT * FROM [dbo].[tClient]";
-
-                using (SqlCommand cmd = new SqlCommand(reqSelect, sqlconn.reqSql))
-                {
-                    using (SqlDataReader readDonnee = cmd.ExecuteReader())
-                    {
-                        while (readDonnee.Read())
-                        {
-                            string nombd = readDonnee["nom"].ToString();
-                            string postNombd = readDonnee["postNom"].ToString();
-                            string prenombd = readDonnee["prenom"].ToString();
-                            string sexebd = readDonnee["sexe"].ToString();
-                            string telbd = readDonnee["tel"].ToString();
-                            string datedb = readDonnee["datePrevu"].ToString();
-                            string nbreJoursbd = readDonnee["nombreJours"].ToString();
-                            string typeChambrebd = readDonnee["typeChambre"].ToString();
-                            string categorieChbrebd = readDonnee["nomCategorie"].ToString();
-                            string numChambrebd = readDonnee["numChambre"].ToString();
-                            string montantPayebd = readDonnee["montant"].ToString();
-
-                            dataGridView1.Rows.Add(nombd, postNombd, prenombd, sexebd, telbd, datedb, nbreJoursbd, typeChambrebd, categorieChbrebd, numChambrebd, montantPayebd);
-                        }
-                        readDonnee.Close();
-                        readDonnee.Dispose();
-                        cmd.Dispose();
-
-                    }
-                }
-               
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Echec !! " + ex.Message);
-            }
-            finally
-            {
-                MessageBox.Show("Finaly!! ");
-                if (sqlconn.reqSql != null && sqlconn.reqSql.State == ConnectionState.Open)
-                {
-                    sqlconn.reqSql.Close();
-                }
-            }
+            showDatadb shwData = new showDatadb();
+            dataGridView1.Rows.Add(
+                shwData.nombd, 
+                shwData.postNombd, 
+                shwData.prenombd, 
+                shwData.sexebd, 
+                shwData.telbd, 
+                shwData.datedb, 
+                shwData.nbreJoursbd, 
+                shwData.typeChambrebd, 
+                shwData.categorieChbrebd,
+                shwData.numChambrebd,
+                shwData.montantPayebd
+            );
         }
 
         private void OpenConnection()

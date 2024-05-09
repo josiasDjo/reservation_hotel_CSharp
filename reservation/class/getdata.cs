@@ -23,4 +23,20 @@ namespace getdataNames
         public string bdDatePayement { get; set; }
         public string bdNombreJours { get; set; }
     }
+
+    class showData
+    {
+        //, , , , telbd, , , , , , 
+        public string nombd { get; set; }
+        public string postNombd { get; set; }
+        public string prenombd { get; set; }
+        public string sexebd { get; set; }
+        public string telbd { get; set; }
+        public string datedb { get; set; }
+        public string nbreJoursbd { get; set; }
+        public string typeChambrebd { get; set; }
+        public string categorieChbrebd { get; set; }
+        public string numChambrebd { get; set; }
+        public string montantPayebd { get; set; }
+    }
 }
