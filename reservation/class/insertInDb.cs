@@ -18,7 +18,7 @@ namespace insererDonnee
             try
             {
                 sqlconn.sendConn();
-
+                rsv.sendEntree();
 
                 string querryInsert = "INSERT INTO [dbo].[tClient] (nom, postNom, prenom, tel) VALUES (@Nom, @PostNom, @Prenom, @Tel) ";
 
