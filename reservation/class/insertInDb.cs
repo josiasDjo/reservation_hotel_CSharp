@@ -42,11 +42,8 @@ namespace insererDonnee
 
                 using (SqlCommand command = new SqlCommand(querryInsert2, sqlconn.reqSql))
                 {
-                    command.Parameters.AddWithValue("@Nom", gdat.bdNom);
-                    command.Parameters.AddWithValue("@PostNom", gdat.bdPostNom);
-                    command.Parameters.AddWithValue("@Prenom", gdat.bdPrenom);
-                    command.Parameters.AddWithValue("@Tel", gdat.bdtel);
-
+                    command.Parameters.AddWithValue("@Nom", gdat.bdNumChambre);
+                    command.Parameters.AddWithValue("@PostNom", gdat.bdTypeChambre);               
 
                     command.ExecuteNonQuery();
                 }
@@ -64,11 +61,8 @@ namespace insererDonnee
 
                 using (SqlCommand command = new SqlCommand(querryInsert4, sqlconn.reqSql))
                 {
-                    command.Parameters.AddWithValue("@Nom", gdat.bdNom);
-                    command.Parameters.AddWithValue("@PostNom", gdat.bdPostNom);
-                    command.Parameters.AddWithValue("@Prenom", gdat.bdPrenom);
-                    command.Parameters.AddWithValue("@Tel", gdat.bdtel);
-
+                    command.Parameters.AddWithValue("@Nom", gdat.bdmontant);
+                    command.Parameters.AddWithValue("@PostNom", gdat.bdDatePayement);
 
                     command.ExecuteNonQuery();
                 }
@@ -77,11 +71,8 @@ namespace insererDonnee
 
                 using (SqlCommand command = new SqlCommand(querryInsert5, sqlconn.reqSql))
                 {
-                    command.Parameters.AddWithValue("@Nom", gdat.bdNom);
-                    command.Parameters.AddWithValue("@PostNom", gdat.bdPostNom);
-                    command.Parameters.AddWithValue("@Prenom", gdat.bdPrenom);
-                    command.Parameters.AddWithValue("@Tel", gdat.bdtel);
-
+                    command.Parameters.AddWithValue("@Nom", gdat.bdDatePrevu);
+                    command.Parameters.AddWithValue("@PostNom", gdat.bdNombreJours);
 
                     command.ExecuteNonQuery();
                 }

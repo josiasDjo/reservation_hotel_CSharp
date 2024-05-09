@@ -49,8 +49,14 @@ namespace reservation
                             string nombd = readDonnee["nom"].ToString();
                             string postNombd = readDonnee["postNom"].ToString();
                             string prenombd = readDonnee["prenom"].ToString();
+                            string sexebd = readDonnee["sexe"].ToString();
                             string telbd = readDonnee["tel"].ToString();
-
+                            string datedb = readDonnee["datePrevu"].ToString();
+                            string nbreJoursbd = readDonnee["nombreJours"].ToString();
+                            string typeChambrebd = readDonnee["typeChambre"].ToString();
+                            string categorieChbrebd = readDonnee["nomCategorie"].ToString();
+                            string numChambrebd = readDonnee["numChambre"].ToString();
+                            string montantPayebd = readDonnee["montant"].ToString();
 
                             dataGridView1.Rows.Add(nombd, postNombd, prenombd, telbd);
                         }
@@ -104,16 +110,19 @@ namespace reservation
         public void sendEntree()
         {
             getdata gdat = new getdata();
-                                       
+            DateTime currentDate = DateTime.Now;
+
+            string datetoday = currentDate.ToString();
             gdat.bdNom = txtnom.Text;
             gdat.bdPostNom = txtpostnom.Text;
             gdat.bdPrenom = txtprenom.Text;
             gdat.bdtel = txtphone.Text;
             gdat.bdsexe = txtsexe.Text;
-            gdat.bdDate = dateTimePicker1.Text;
+            gdat.bdDatePrevu = dateTimePicker1.Text;
             gdat.bdTypeChambre = txtTypeChambre.Text;
             gdat.bdmontant = txtmontant.Text;
-            gdat.bdnumChambre = txtnumChambre.Text;
+            gdat.bdNumChambre = txtnumChambre.Text;
+            gdat.bdDatePayement = datetoday;
 
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

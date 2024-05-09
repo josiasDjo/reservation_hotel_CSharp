@@ -15,9 +15,12 @@ namespace getdataNames
         public string bdPrenom { get; set; }
         public string bdtel { get; set; }
         public string bdsexe { get; set; }
-        public string bdDate { get; set; }
+        public string bdDatePrevu { get; set; }
         public string bdTypeChambre { get; set; }
         public string bdmontant { get; set; }
-        public string bdnumChambre { get; set; }
+        public string bdNumChambre { get; set; }
+        public string bdnomCategorie { get; set; }
+        public string bdDatePayement { get; set; }
+        public string bdNombreJours { get; set; }
     }
 }

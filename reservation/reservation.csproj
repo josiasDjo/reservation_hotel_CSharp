@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="class\connxion_bd.cs" />
+    <Compile Include="class\getdata.cs" />
+    <Compile Include="class\insertInDb.cs" />
     <Compile Include="db_reservatonDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

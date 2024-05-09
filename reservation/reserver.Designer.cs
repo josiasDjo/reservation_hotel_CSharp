@@ -51,22 +51,24 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dbreservatonDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.db_reservatonDataSet = new reservation.db_reservatonDataSet();
-            this.erreur = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.dbreservatonDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtsexe = new System.Windows.Forms.TextBox();
             this.colNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPostNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPrenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColSexe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColNbreJrs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColTypeChambre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColCategorieChbre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumChambre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColMontant = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtsexe = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbreservatonDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.db_reservatonDataSet)).BeginInit();
@@ -246,9 +248,12 @@
             this.colNom,
             this.colPostNom,
             this.colPrenom,
+            this.ColSexe,
             this.ColPhone,
             this.ColDate,
+            this.ColNbreJrs,
             this.ColTypeChambre,
+            this.ColCategorieChbre,
             this.NumChambre,
             this.ColMontant});
             this.dataGridView1.Location = new System.Drawing.Point(45, 454);
@@ -267,15 +272,6 @@
             // 
             this.db_reservatonDataSet.DataSetName = "db_reservatonDataSet";
             this.db_reservatonDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // erreur
-            // 
-            this.erreur.AutoSize = true;
-            this.erreur.Location = new System.Drawing.Point(561, 398);
-            this.erreur.Name = "erreur";
-            this.erreur.Size = new System.Drawing.Size(51, 20);
-            this.erreur.TabIndex = 8;
-            this.erreur.Text = "erreur";
             // 
             // panel1
             // 
@@ -324,48 +320,6 @@
             this.dbreservatonDataSetBindingSource1.DataSource = this.db_reservatonDataSet;
             this.dbreservatonDataSetBindingSource1.Position = 0;
             // 
-            // colNom
-            // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            this.colNom.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colNom.HeaderText = "Nom";
-            this.colNom.Name = "colNom";
-            // 
-            // colPostNom
-            // 
-            this.colPostNom.HeaderText = "Post-Nom";
-            this.colPostNom.Name = "colPostNom";
-            // 
-            // colPrenom
-            // 
-            this.colPrenom.HeaderText = "Prénom";
-            this.colPrenom.Name = "colPrenom";
-            // 
-            // ColPhone
-            // 
-            this.ColPhone.HeaderText = "Phone";
-            this.ColPhone.Name = "ColPhone";
-            // 
-            // ColDate
-            // 
-            this.ColDate.HeaderText = "Date";
-            this.ColDate.Name = "ColDate";
-            // 
-            // ColTypeChambre
-            // 
-            this.ColTypeChambre.HeaderText = "Type Chambre";
-            this.ColTypeChambre.Name = "ColTypeChambre";
-            // 
-            // NumChambre
-            // 
-            this.NumChambre.HeaderText = "N° ";
-            this.NumChambre.Name = "NumChambre";
-            // 
-            // ColMontant
-            // 
-            this.ColMontant.HeaderText = "Montant";
-            this.ColMontant.Name = "ColMontant";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -383,6 +337,63 @@
             this.txtsexe.Size = new System.Drawing.Size(312, 26);
             this.txtsexe.TabIndex = 2;
             // 
+            // colNom
+            // 
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            this.colNom.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colNom.HeaderText = "Nom";
+            this.colNom.Name = "colNom";
+            // 
+            // colPostNom
+            // 
+            this.colPostNom.HeaderText = "Post-Nom";
+            this.colPostNom.Name = "colPostNom";
+            // 
+            // colPrenom
+            // 
+            this.colPrenom.HeaderText = "Prénom";
+            this.colPrenom.Name = "colPrenom";
+            // 
+            // ColSexe
+            // 
+            this.ColSexe.HeaderText = "Sexe";
+            this.ColSexe.Name = "ColSexe";
+            // 
+            // ColPhone
+            // 
+            this.ColPhone.HeaderText = "Phone";
+            this.ColPhone.Name = "ColPhone";
+            // 
+            // ColDate
+            // 
+            this.ColDate.HeaderText = "Date";
+            this.ColDate.Name = "ColDate";
+            // 
+            // ColNbreJrs
+            // 
+            this.ColNbreJrs.HeaderText = "Nombre de Jours";
+            this.ColNbreJrs.Name = "ColNbreJrs";
+            // 
+            // ColTypeChambre
+            // 
+            this.ColTypeChambre.HeaderText = "Type de Chambre";
+            this.ColTypeChambre.Name = "ColTypeChambre";
+            // 
+            // ColCategorieChbre
+            // 
+            this.ColCategorieChbre.HeaderText = "Catégorie de chambre";
+            this.ColCategorieChbre.Name = "ColCategorieChbre";
+            // 
+            // NumChambre
+            // 
+            this.NumChambre.HeaderText = "N° ";
+            this.NumChambre.Name = "NumChambre";
+            // 
+            // ColMontant
+            // 
+            this.ColMontant.HeaderText = "Montant";
+            this.ColMontant.Name = "ColMontant";
+            // 
             // reserver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -390,7 +401,6 @@
             this.ClientSize = new System.Drawing.Size(1063, 615);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.erreur);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtTypeChambre);
@@ -449,21 +459,23 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource dbreservatonDataSetBindingSource;
         private db_reservatonDataSet db_reservatonDataSet;
-        private System.Windows.Forms.Label erreur;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.BindingSource dbreservatonDataSetBindingSource1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtsexe;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNom;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPostNom;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrenom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColSexe;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColPhone;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColNbreJrs;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTypeChambre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColCategorieChbre;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumChambre;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColMontant;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtsexe;
     }
 }
