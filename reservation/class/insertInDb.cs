@@ -24,58 +24,34 @@ namespace insererDonnee
             {
                 sqlconn.sendConn();
     
-                string querryInsert1 = "INSERT INTO [dbo].[tClient] (nom, postNom, prenom, sexe, tel) VALUES (@Nomh, @PostNomh, @Prenomh, @sexeh, @Telh) ";
+                string querryInsert1 = "INSERT INTO [dbo].[tClient] (nom, postNom, prenom, sexe, tel) VALUES ('"+gdat.bdNom+ "', '" + gdat.bdPostNom+ "','" + gdat.bdPrenom+ "', '" + gdat.bdsexe+ "', '" + gdat.bdtel+ "') ";
 
-                using (SqlCommand command = new SqlCommand(querryInsert1, sqlconn.reqSql))
-                {
-                    command.Parameters.AddWithValue("@Nomh", gdat.bdNom);
-                    command.Parameters.AddWithValue("@PostNomh", gdat.bdPostNom);
-                    command.Parameters.AddWithValue("@Prenomh", gdat.bdPrenom);
-                    command.Parameters.AddWithValue("@sexeh", gdat.bdPrenom);
-                    command.Parameters.AddWithValue("@Telh", gdat.bdtel);
+                SqlCommand command1 = new SqlCommand(querryInsert1, sqlconn.reqSql);               
+                command1.ExecuteNonQuery();
+                
+
+                string querryInsert2 = "INSERT INTO [dbo].[tChambre] (numChambre, typeChambre) VALUES ('" + gdat.bdNumChambre+ "', '" + gdat.bdTypeChambre+ "') ";
+
+                SqlCommand command2 = new SqlCommand(querryInsert2, sqlconn.reqSql);                
+                command2.ExecuteNonQuery();
+              
+
+                string querryInsert3 = "INSERT INTO [dbo].[tCategorieCh] (nomCategorie) VALUES ('" + gdat.bdnomCategorie+ "') ";
+
+                SqlCommand command3 = new SqlCommand(querryInsert3, sqlconn.reqSql);
+                command3.ExecuteNonQuery();
+              
+
+                string querryInsert4 = "INSERT INTO [dbo].[tPayement] (montant, datePayement) VALUES ('" + gdat.bdmontant+ "', '" + gdat.bdDatePayement+ "') ";
+
+                SqlCommand command4 = new SqlCommand(querryInsert4, sqlconn.reqSql);
+                command4.ExecuteNonQuery();
 
 
-                    command.ExecuteNonQuery();
-                }
+                string querryInsert5 = "INSERT INTO [dbo].[tReservation] (datePrevu, nombreJours) VALUES ('" + gdat.bdDatePrevu+ "', '" + gdat.bdNombreJours+ "') ";
 
-                string querryInsert2 = "INSERT INTO [dbo].[tChambre] (numChambre, typeChambre) VALUES (@numChambre, @typeChambre) ";
-
-                using (SqlCommand command = new SqlCommand(querryInsert2, sqlconn.reqSql))
-                {
-                    command.Parameters.AddWithValue("@Nom", gdat.bdNumChambre);
-                    command.Parameters.AddWithValue("@PostNom", gdat.bdTypeChambre);               
-
-                    command.ExecuteNonQuery();
-                }
-
-                string querryInsert3 = "INSERT INTO [dbo].[tCategorieCh] (nomCategorie) VALUES (@nomCategorie) ";
-
-                using (SqlCommand command = new SqlCommand(querryInsert3, sqlconn.reqSql))
-                {
-                    command.Parameters.AddWithValue("@nomCategorie", gdat.bdnomCategorie);
-
-                    command.ExecuteNonQuery();
-                }
-
-                string querryInsert4 = "INSERT INTO [dbo].[tPayement] (montant, datePayement) VALUES (@Montant, @DatePayement) ";
-
-                using (SqlCommand command = new SqlCommand(querryInsert4, sqlconn.reqSql))
-                {
-                    command.Parameters.AddWithValue("@Montant", gdat.bdmontant);
-                    command.Parameters.AddWithValue("@DatePayement", gdat.bdDatePayement);
-
-                    command.ExecuteNonQuery();
-                }
-
-                string querryInsert5 = "INSERT INTO [dbo].[tReservation] (datePrevu, nombreJours) VALUES (@DatePrevu, @NombreJours) ";
-
-                using (SqlCommand command = new SqlCommand(querryInsert5, sqlconn.reqSql))
-                {
-                    command.Parameters.AddWithValue("@DatePrevu", gdat.bdDatePrevu);
-                    command.Parameters.AddWithValue("@NombreJours", gdat.bdNombreJours);
-
-                    command.ExecuteNonQuery();
-                }
+                SqlCommand command5 = new SqlCommand(querryInsert5, sqlconn.reqSql);
+                command5.ExecuteNonQuery();
 
 
 
