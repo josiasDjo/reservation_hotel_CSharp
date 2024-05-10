@@ -22,7 +22,7 @@ namespace insererDonnee
             connxion_bd sqlconn = new connxion_bd();
             getdata gdat = new getdata();
 
-            string dbNom = gdat.phone;
+            string dbNom = gdat.nom;
             string dbPostNom = gdat.postNom;
             string dbPrenom = gdat.prenom;
             string dbsexe = gdat.sexe;

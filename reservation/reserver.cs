@@ -13,6 +13,8 @@ using insererDonnee;
 using getdataNames;
 using affichageDonnee;
 
+
+
 namespace reservation
 {
 
@@ -99,7 +101,15 @@ namespace reservation
             getDo.sexe = txtsexe.Text;
             getDo.phone = txtphone.Text;
 
-            isr.dataInsert();
+            if (getDo.nom == "") 
+            {
+                MessageBox.Show("Le nom est null");
+            } else {
+                MessageBox.Show("Le nom  est : " + getDo.nom);
+                isr.dataInsert();
+            }
+
+
 
         }
         public void send()

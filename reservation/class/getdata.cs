@@ -7,15 +7,29 @@ using reservation;
 
 namespace getdataNames
 {
-    class getdata
+    public class getdata
     {
         reserver rsver = new reserver();
 
-        public string nom { get; set; }
-        public string postNom;
-        public string prenom;
-        public string sexe;
-        public string phone;
+
+        private string _nom;
+        public string nom
+        {
+            get
+            {
+                return _nom;
+            } 
+            set
+            {
+                _nom = value;
+            }
+        }           
+
+
+        public string postNom { get; set; }
+        public string prenom { get; set; }
+        public string sexe { get; set; }
+        public string phone { get; set; }
     }
 
     class showDatadb
