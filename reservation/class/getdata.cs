@@ -11,23 +11,7 @@ namespace getdataNames
     {
         reserver rsver = new reserver();
 
-        private string _bdNom;
-        public string bdNom
-        {
-            get { return _bdNom; }
-            set { _bdNom = value; }
-        }
-        public string bdPostNom { get; set; }
-        public string bdPrenom { get; set; }
-        public string bdtel { get; set; }
-        public string bdsexe { get; set; }
-        public string bdDatePrevu { get; set; }
-        public string bdTypeChambre { get; set; }
-        public decimal bdmontant { get; set; }
-        public int bdNumChambre { get; set; }
-        public string bdnomCategorie { get; set; }
-        public string bdDatePayement { get; set; }
-        public int bdNombreJours { get; set; }
+
     }
 
     class showDatadb
@@ -44,4 +28,25 @@ namespace getdataNames
         public string numChambrebd { get; set; }
         public string montantPayebd { get; set; }
     }
+
+    class getDonneeEntree
+    {
+        public void DonnerEntrer()
+        {
+            /*reserver rsver = new reserver();
+            string DatabdNom = rsver.txtnom.Text;
+            string DatabdPostNom = txtpostnom.Text;
+            string DatabdPrenom = txtprenom.Text;
+            string Databdtel = txtphone.Text;
+            string Databdsexe = txtsexe.Text;
+            string DatabdDatePrevu = dateTimePicker1.Text;
+            int DatabdNombreJours = int.Parse(txtNbreJrs.Text);
+            string DatabdTypeChambre = txtTypeChambre.Text;
+            int DatabdNumChambre = int.Parse(txtNumChbre.Text);
+            decimal Databdmontant = decimal.Parse(txtmontant.Text);
+            string DatabdnomCategorie = txtCategorieChbre.Text;*/
+        }
+    }
 }
+
+

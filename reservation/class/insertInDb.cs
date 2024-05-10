@@ -20,18 +20,30 @@ namespace insererDonnee
             connxion_bd sqlconn = new connxion_bd();
             getdata gdat = new getdata();
 
-            string InsNom = gdat.bdNom;
-            string InsPostNom = gdat.bdPostNom;
-            string InsPrenom = gdat.bdPrenom;
-            string InsSexe = gdat.bdsexe;
-            string InsTel = gdat.bdtel;
+            string DatabdNom = rsv.DatabdNom;
 
-            MessageBox.Show("Données : " + InsNom + InsPostNom + InsPrenom + InsSexe + InsTel);
+            /*DatabdPostNom = txtpostnom.Text;
+            DatabdPrenom = txtprenom.Text;
+            Databdtel = txtphone.Text;
+            Databdsexe = txtsexe.Text;
+            DatabdDatePrevu = dateTimePicker1.Text;
+            DatabdNombreJours = int.Parse(txtNbreJrs.Text);
+            DatabdTypeChambre = txtTypeChambre.Text;
+            DatabdNumChambre = int.Parse(txtNumChbre.Text);
+            Databdmontant = decimal.Parse(txtmontant.Text);
+            DatabdnomCategorie = txtCategorieChbre.Text;*/
+            if (DatabdNom == "")
+            {
+                MessageBox.Show("La valeur d'entrée est vide  !");
+            } else
+            {
+                MessageBox.Show("Données à insérer : " + DatabdNom);
+            }            
 
             try
             {
                 sqlconn.sendConn();
-    
+
                 /*string querryInsert1 = "INSERT INTO [dbo].[tClient] (nom, postNom, prenom, sexe, tel) VALUES (@Nom, @PostNom, @Prenom, @Sexe, @Tel) ";
 
                 SqlCommand command1 = new SqlCommand(querryInsert1, sqlconn.reqSql);
@@ -43,7 +55,7 @@ namespace insererDonnee
                 command1.Parameters.AddWithValue("@Tel", );
 
                 command1.ExecuteNonQuery();*/
-                
+
 
                 /*string querryInsert2 = "INSERT INTO [dbo].[tChambre] (numChambre, typeChambre) VALUES ('" + gdat.bdNumChambre+ "', '" + gdat.bdTypeChambre+ "') ";
 
@@ -70,13 +82,13 @@ namespace insererDonnee
 
 
 
-                MessageBox.Show("Enregistrement réussi !! ");
+                //MessageBox.Show("Enregistrement réussi !! ");
                 sqlconn.reqSql.Close();
 
             }
             catch (Exception exc)
             {
-                MessageBox.Show("Une erreur est survenue ! " + exc);
+                //MessageBox.Show("Une erreur est survenue ! " + exc);
             }
             finally
             {

@@ -90,48 +90,35 @@ namespace reservation
 
         private void button1_Click(object sender, EventArgs e)
         {
-            sendEntree();
+
+            insertInDb inDB = new insertInDb();
+            inDB.dataInsert();
         }
 
-        public void sendEntree()
+        public string DatabdNom
         {
-            string DatabdNom = txtnom.Text;
-            string DatabdPostNom = txtpostnom.Text;
-            string DatabdPrenom = txtprenom.Text;
-            string Databdtel = txtphone.Text;
-            string Databdsexe = txtsexe.Text;
-            string DatabdDatePrevu = dateTimePicker1.Text;
-            int DatabdNombreJours = int.Parse(txtNbreJrs.Text);
-            string DatabdTypeChambre = txtTypeChambre.Text;
-            int DatabdNumChambre = int.Parse(txtNumChbre.Text);
-            decimal Databdmontant = decimal.Parse(txtmontant.Text);
-            string DatabdnomCategorie = txtCategorieChbre.Text;
-
-            getdata gdat = new getdata();
-            DateTime currentDate = DateTime.Now;
-
-            string datetoday = currentDate.ToString();
-            gdat.bdNom = DatabdNom;
-            gdat.bdPostNom = DatabdPostNom;
-            gdat.bdPrenom = DatabdPrenom;
-            gdat.bdtel = Databdtel;
-            gdat.bdsexe = txtsexe.Text;
-            gdat.bdDatePrevu = DatabdDatePrevu;
-            gdat.bdNombreJours = DatabdNombreJours;
-            gdat.bdTypeChambre = DatabdTypeChambre;
-            gdat.bdNumChambre = DatabdNumChambre;
-            gdat.bdmontant = Databdmontant;
-            gdat.bdnomCategorie = DatabdnomCategorie;
-            gdat.bdDatePayement = datetoday;
-
-
-            err1.Text = gdat.bdNom;
-            err2.Text = gdat.bdPostNom;
-
-
-            insertInDb isrData = new insertInDb();
-            isrData.dataInsert();
-
+            get { return txtnom.Text; }
+            set { txtnom.Text = value; }
+        }
+        public string DatabdPostNom
+        {
+            get { return txtpostnom.Text; }
+            set { ; }
+        }
+        public string DatabdPrenom
+        {
+            get { return txtprenom.Text; }
+            set {; }
+        }
+        public string Databdsexe
+        {
+            get { return txtsexe.Text; }
+            set {; }
+        }
+        public string Databdtel
+        {
+            get { return txtphone.Text; }
+            set {; }
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
