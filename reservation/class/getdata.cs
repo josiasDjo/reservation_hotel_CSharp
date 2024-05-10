@@ -10,7 +10,13 @@ namespace getdataNames
     class getdata
     {
         reserver rsver = new reserver();
-        public string bdNom { get; set; }
+
+        private string _bdNom;
+        public string bdNom
+        {
+            get { return _bdNom; }
+            set { _bdNom = value; }
+        }
         public string bdPostNom { get; set; }
         public string bdPrenom { get; set; }
         public string bdtel { get; set; }

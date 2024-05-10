@@ -20,17 +20,32 @@ namespace insererDonnee
             connxion_bd sqlconn = new connxion_bd();
             getdata gdat = new getdata();
 
+            string InsNom = gdat.bdNom;
+            string InsPostNom = gdat.bdPostNom;
+            string InsPrenom = gdat.bdPrenom;
+            string InsSexe = gdat.bdsexe;
+            string InsTel = gdat.bdtel;
+
+            MessageBox.Show("Données : " + InsNom + InsPostNom + InsPrenom + InsSexe + InsTel);
+
             try
             {
                 sqlconn.sendConn();
     
-                string querryInsert1 = "INSERT INTO [dbo].[tClient] (nom, postNom, prenom, sexe, tel) VALUES ('"+gdat.bdNom+ "', '" + gdat.bdPostNom+ "','" + gdat.bdPrenom+ "', '" + gdat.bdsexe+ "', '" + gdat.bdtel+ "') ";
+                /*string querryInsert1 = "INSERT INTO [dbo].[tClient] (nom, postNom, prenom, sexe, tel) VALUES (@Nom, @PostNom, @Prenom, @Sexe, @Tel) ";
 
-                SqlCommand command1 = new SqlCommand(querryInsert1, sqlconn.reqSql);               
-                command1.ExecuteNonQuery();
+                SqlCommand command1 = new SqlCommand(querryInsert1, sqlconn.reqSql);
+
+                command1.Parameters.AddWithValue("@Nom", );
+                command1.Parameters.AddWithValue("@PostNom", );
+                command1.Parameters.AddWithValue("@Prenom", );
+                command1.Parameters.AddWithValue("@Sexe", );
+                command1.Parameters.AddWithValue("@Tel", );
+
+                command1.ExecuteNonQuery();*/
                 
 
-                string querryInsert2 = "INSERT INTO [dbo].[tChambre] (numChambre, typeChambre) VALUES ('" + gdat.bdNumChambre+ "', '" + gdat.bdTypeChambre+ "') ";
+                /*string querryInsert2 = "INSERT INTO [dbo].[tChambre] (numChambre, typeChambre) VALUES ('" + gdat.bdNumChambre+ "', '" + gdat.bdTypeChambre+ "') ";
 
                 SqlCommand command2 = new SqlCommand(querryInsert2, sqlconn.reqSql);                
                 command2.ExecuteNonQuery();
@@ -51,7 +66,7 @@ namespace insererDonnee
                 string querryInsert5 = "INSERT INTO [dbo].[tReservation] (datePrevu, nombreJours) VALUES ('" + gdat.bdDatePrevu+ "', '" + gdat.bdNombreJours+ "') ";
 
                 SqlCommand command5 = new SqlCommand(querryInsert5, sqlconn.reqSql);
-                command5.ExecuteNonQuery();
+                command5.ExecuteNonQuery();*/
 
 
 

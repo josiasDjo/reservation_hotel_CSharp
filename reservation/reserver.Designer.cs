@@ -75,6 +75,8 @@
             this.txtCategorieChbre = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.err1 = new System.Windows.Forms.Label();
+            this.err2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbreservatonDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.db_reservatonDataSet)).BeginInit();
@@ -465,11 +467,33 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button1_Click);
             // 
+            // err1
+            // 
+            this.err1.AutoSize = true;
+            this.err1.ForeColor = System.Drawing.Color.Red;
+            this.err1.Location = new System.Drawing.Point(46, 94);
+            this.err1.Name = "err1";
+            this.err1.Size = new System.Drawing.Size(60, 20);
+            this.err1.TabIndex = 10;
+            this.err1.Text = "label14";
+            // 
+            // err2
+            // 
+            this.err2.AutoSize = true;
+            this.err2.ForeColor = System.Drawing.Color.Red;
+            this.err2.Location = new System.Drawing.Point(46, 147);
+            this.err2.Name = "err2";
+            this.err2.Size = new System.Drawing.Size(60, 20);
+            this.err2.TabIndex = 11;
+            this.err2.Text = "label15";
+            // 
             // reserver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1063, 679);
+            this.Controls.Add(this.err2);
+            this.Controls.Add(this.err1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.txtCategorieChbre);
             this.Controls.Add(this.panel1);
@@ -560,5 +584,7 @@
         private System.Windows.Forms.ComboBox txtCategorieChbre;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label err1;
+        private System.Windows.Forms.Label err2;
     }
 }

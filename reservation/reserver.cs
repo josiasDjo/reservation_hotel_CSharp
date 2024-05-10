@@ -90,29 +90,47 @@ namespace reservation
 
         private void button1_Click(object sender, EventArgs e)
         {
-            insertInDb isrData = new insertInDb();
             sendEntree();
-            isrData.dataInsert();
         }
 
         public void sendEntree()
         {
+            string DatabdNom = txtnom.Text;
+            string DatabdPostNom = txtpostnom.Text;
+            string DatabdPrenom = txtprenom.Text;
+            string Databdtel = txtphone.Text;
+            string Databdsexe = txtsexe.Text;
+            string DatabdDatePrevu = dateTimePicker1.Text;
+            int DatabdNombreJours = int.Parse(txtNbreJrs.Text);
+            string DatabdTypeChambre = txtTypeChambre.Text;
+            int DatabdNumChambre = int.Parse(txtNumChbre.Text);
+            decimal Databdmontant = decimal.Parse(txtmontant.Text);
+            string DatabdnomCategorie = txtCategorieChbre.Text;
+
             getdata gdat = new getdata();
             DateTime currentDate = DateTime.Now;
 
             string datetoday = currentDate.ToString();
-            gdat.bdNom = txtnom.Text;
-            gdat.bdPostNom = txtpostnom.Text;
-            gdat.bdPrenom = txtprenom.Text;
-            gdat.bdtel = txtphone.Text;
+            gdat.bdNom = DatabdNom;
+            gdat.bdPostNom = DatabdPostNom;
+            gdat.bdPrenom = DatabdPrenom;
+            gdat.bdtel = Databdtel;
             gdat.bdsexe = txtsexe.Text;
-            gdat.bdDatePrevu = dateTimePicker1.Text;
-            gdat.bdNombreJours = int.Parse(txtNbreJrs.Text);
-            gdat.bdTypeChambre = txtTypeChambre.Text;
-            gdat.bdNumChambre = int.Parse(txtNumChbre.Text);
-            gdat.bdmontant = decimal.Parse(txtmontant.Text);
-            gdat.bdnomCategorie = txtCategorieChbre.Text;
+            gdat.bdDatePrevu = DatabdDatePrevu;
+            gdat.bdNombreJours = DatabdNombreJours;
+            gdat.bdTypeChambre = DatabdTypeChambre;
+            gdat.bdNumChambre = DatabdNumChambre;
+            gdat.bdmontant = Databdmontant;
+            gdat.bdnomCategorie = DatabdnomCategorie;
             gdat.bdDatePayement = datetoday;
+
+
+            err1.Text = gdat.bdNom;
+            err2.Text = gdat.bdPostNom;
+
+
+            insertInDb isrData = new insertInDb();
+            isrData.dataInsert();
 
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
