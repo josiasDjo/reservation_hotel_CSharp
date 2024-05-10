@@ -57,22 +57,22 @@ namespace insererDonnee
                     command.ExecuteNonQuery();
                 }
 
-                string querryInsert4 = "INSERT INTO [dbo].[tPayement] (montant, datePayement) VALUES (@Nom, @PostNom, @Prenom, @Tel) ";
+                string querryInsert4 = "INSERT INTO [dbo].[tPayement] (montant, datePayement) VALUES (@Montant, @DatePayement) ";
 
                 using (SqlCommand command = new SqlCommand(querryInsert4, sqlconn.reqSql))
                 {
-                    command.Parameters.AddWithValue("@Nom", gdat.bdmontant);
-                    command.Parameters.AddWithValue("@PostNom", gdat.bdDatePayement);
+                    command.Parameters.AddWithValue("@Montant", gdat.bdmontant);
+                    command.Parameters.AddWithValue("@DatePayement", gdat.bdDatePayement);
 
                     command.ExecuteNonQuery();
                 }
 
-                string querryInsert5 = "INSERT INTO [dbo].[tReservation] (datePrevu, nombreJours) VALUES (@Nom, @PostNom, @Prenom, @Tel) ";
+                string querryInsert5 = "INSERT INTO [dbo].[tReservation] (datePrevu, nombreJours) VALUES (@DatePrevu, @NombreJours) ";
 
                 using (SqlCommand command = new SqlCommand(querryInsert5, sqlconn.reqSql))
                 {
-                    command.Parameters.AddWithValue("@Nom", gdat.bdDatePrevu);
-                    command.Parameters.AddWithValue("@PostNom", gdat.bdNombreJours);
+                    command.Parameters.AddWithValue("@DatePrevu", gdat.bdDatePrevu);
+                    command.Parameters.AddWithValue("@NombreJours", gdat.bdNombreJours);
 
                     command.ExecuteNonQuery();
                 }
