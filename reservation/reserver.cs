@@ -90,40 +90,34 @@ namespace reservation
 
         private void button1_Click(object sender, EventArgs e)
         {
+            getdata getDo = new getdata();
+            insertInDb isr = new insertInDb();
 
-            insertInDb inDB = new insertInDb();
-            inDB.dataInsert();
-        }
+            getDo.nom = txtnom.Text;
+            getDo.postNom = txtpostnom.Text;
+            getDo.prenom = txtprenom.Text;
+            getDo.sexe = txtsexe.Text;
+            getDo.phone = txtphone.Text;
 
-        public string DatabdNom
-        {
-            get { return txtnom.Text; }
-            set { txtnom.Text = value; }
+            isr.dataInsert();
+
         }
-        public string DatabdPostNom
-        {
-            get { return txtpostnom.Text; }
-            set { ; }
+        public void send()
+        {   
+            //string Nom = txtnom.Text;
+            //string PostNom = txtprenom.Text;
+            //string prenom = txtprenom.Text;
+            //string sexe = txtsexe.Text;
+            //string tel = txtphone.Text;
         }
-        public string DatabdPrenom
-        {
-            get { return txtprenom.Text; }
-            set {; }
-        }
-        public string Databdsexe
-        {
-            get { return txtsexe.Text; }
-            set {; }
-        }
-        public string Databdtel
-        {
-            get { return txtphone.Text; }
-            set {; }
-        }
+                  
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
+
+
     }
+
 }

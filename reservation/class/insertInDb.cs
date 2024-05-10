@@ -17,28 +17,24 @@ namespace insererDonnee
         public void dataInsert()
         {
             reserver rsv = new reserver();
+            rsv.send();
+
             connxion_bd sqlconn = new connxion_bd();
             getdata gdat = new getdata();
 
-            string DatabdNom = rsv.DatabdNom;
+            string dbNom = gdat.phone;
+            string dbPostNom = gdat.postNom;
+            string dbPrenom = gdat.prenom;
+            string dbsexe = gdat.sexe;
+            string dbtel = gdat.phone;
 
-            /*DatabdPostNom = txtpostnom.Text;
-            DatabdPrenom = txtprenom.Text;
-            Databdtel = txtphone.Text;
-            Databdsexe = txtsexe.Text;
-            DatabdDatePrevu = dateTimePicker1.Text;
-            DatabdNombreJours = int.Parse(txtNbreJrs.Text);
-            DatabdTypeChambre = txtTypeChambre.Text;
-            DatabdNumChambre = int.Parse(txtNumChbre.Text);
-            Databdmontant = decimal.Parse(txtmontant.Text);
-            DatabdnomCategorie = txtCategorieChbre.Text;*/
-            if (DatabdNom == "")
+            if (dbNom == "")
             {
                 MessageBox.Show("La valeur d'entrée est vide  !");
             } else
             {
-                MessageBox.Show("Données à insérer : " + DatabdNom);
-            }            
+                MessageBox.Show("Données à insérer : " + dbNom);
+            }           
 
             try
             {
