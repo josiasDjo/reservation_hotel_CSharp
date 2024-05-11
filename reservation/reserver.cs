@@ -158,7 +158,7 @@ namespace reservation
 
                     MessageBox.Show("Enregistrement réussi !! ");
                     sqlconn.reqSql.Close();
-
+                    command.Dispose();
                     afficherDonnee();
 
                 }
@@ -205,14 +205,27 @@ namespace reservation
                             string prenombd = readDonnee["prenom"].ToString();
                             string sexebd = readDonnee["sexe"].ToString();
                             string telbd = readDonnee["tel"].ToString();
-                            string datedb = readDonnee["datePrevu"].ToString();
-                            string nbreJoursbd = readDonnee["nombreJours"].ToString();
-                            string typeChambrebd = readDonnee["typeChambre"].ToString();
-                            string categorieChbrebd = readDonnee["nomCategorie"].ToString();
-                            string numChambrebd = readDonnee["numChambre"].ToString();
-                            string montantPayebd = readDonnee["montant"].ToString();
+                            //string datedb = readDonnee["datePrevu"].ToString();
+                            //string nbreJoursbd = readDonnee["nombreJours"].ToString();
+                            //string typeChambrebd = readDonnee["typeChambre"].ToString();
+                            //string categorieChbrebd = readDonnee["nomCategorie"].ToString();
+                            //string numChambrebd = readDonnee["numChambre"].ToString();
+                            //string montantPayebd = readDonnee["montant"].ToString();
 
-                            dataGridView1.Rows.Add(nombd, postNombd, prenombd, sexebd, telbd, datedb, nbreJoursbd, typeChambrebd, categorieChbrebd, numChambrebd, montantPayebd);
+                            int indexNouvelleLigne = dataGridView1.Rows.Add();
+
+                            // Accéder à la nouvelle ligne ajoutée
+                            DataGridViewRow nouvelleLigne = dataGridView1.Rows[indexNouvelleLigne];
+
+                            // Définir les valeurs pour chaque cellule de la nouvelle ligne
+                            nouvelleLigne.Cells["colNom"].Value = nombd;
+                            nouvelleLigne.Cells["colPostNom"].Value = postNombd;
+                            nouvelleLigne.Cells["colPrenom"].Value = prenombd;
+                            nouvelleLigne.Cells["ColSexe"].Value = sexebd;
+                            nouvelleLigne.Cells["ColPhone"].Value = telbd;
+
+                            // Ajoutez d'autres valeurs pour chaque colonne de votre DataGridView
+
 
                         }
                         readDonnee.Close();
@@ -220,10 +233,15 @@ namespace reservation
                         cmd.Dispose();
 
                     }
+
+                    if (cmd.NextResult())
+                    {
+
+                    }
                 }
 
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show("Echec !! " + ex.Message);
             }
