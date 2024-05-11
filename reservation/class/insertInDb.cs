@@ -21,8 +21,9 @@ namespace insererDonnee
 
             connxion_bd sqlconn = new connxion_bd();
             getdata gdat = new getdata();
+            sendDonnee SD = new sendDonnee();
 
-            string dbNom = gdat.nom;
+            string dbNom = nom;
             string dbPostNom = gdat.postNom;
             string dbPrenom = gdat.prenom;
             string dbsexe = gdat.sexe;
@@ -93,6 +94,18 @@ namespace insererDonnee
                     sqlconn.reqSql.Close();
                 }
             }
+        }
+    }
+
+    partial class sendDonnee
+    {
+        public void receiveData()
+        {
+            //string dbNom = nom;
+            //string dbPostNom = gdat.postNom;
+            //string dbPrenom = gdat.prenom;
+            //string dbsexe = gdat.sexe;
+            //string dbtel = gdat.phone;
         }
     }
 

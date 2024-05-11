@@ -92,7 +92,7 @@ namespace reservation
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            checkData();
         }
         public void checkData()
         {
@@ -112,24 +112,29 @@ namespace reservation
             }
             else
             {
-                MessageBox.Show("Le nom  est : " + nomR);
-                sd.send();
+                MessageBox.Show("Le nom  est : " + nomR + postNomR + prenomR + sexeR + phoneR);
+                sd.nom = nomR;
+                sd.postNom = postNomR;
+                sd.prenom = prenomR;
+                sd.sexe = sexeR;
+                sd.phone = phoneR;
+
+                sd.afficher();
                 //isr.dataInsert();
             }
         }
         partial class sendDonnee
         {
-            public void send()
-            {
-                reserver rsv = new reserver();
-                rsv.checkData();
-                string nom = rsv.nomR;
-                string postNom = rsv.txtpostnom.Text;
-                string prenom = rsv.txtprenom.Text;
-                string sexe = rsv.txtsexe.Text;
-                string phone = rsv.txtphone.Text;
+            //reserver rsv = reserver();
+            public string nom { get; set; }
+            public string postNom { get; set; }
+            public string prenom { get; set; }
+            public string sexe { get; set; }
+            public string phone { get; set; }
 
-                MessageBox.Show("Données entrée : " + nom + postNom + prenom + sexe + phone);
+            public void afficher()
+            {
+                MessageBox.Show("Nom encapsuler  :   " + nom + postNom + prenom + sexe + phone);
             }
         }
                   
