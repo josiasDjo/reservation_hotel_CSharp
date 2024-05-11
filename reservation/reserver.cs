@@ -106,7 +106,8 @@ namespace reservation
                 MessageBox.Show("Le nom est null");
             } else {
                 MessageBox.Show("Le nom  est : " + getDo.nom);
-                isr.dataInsert();
+                send();
+                //isr.dataInsert();
             }
 
 
