@@ -97,20 +97,21 @@ namespace reservation
         {
             getdata getDo = new getdata();
             sendDonnee sd = new sendDonnee();
-            string DateR = DateTime.Today();
+            DateTime dat = DateTime.Now;
+            string DateR = dat.ToString("dddd, dd MMMM yyyy HH:mm:ss");
 
             string nom = txtnom.Text;
             string postNom = txtpostnom.Text;
             string prenom = txtprenom.Text;
             string sexe = txtsexe.Text;
             string phone = txtphone.Text;
-            int numChambre = int.Parse(txtNumChbre.Text);
-            string typeChambre = txtTypeChambre.Text;
-            string NomCat = txtCategorieChbre.Text;
-            string datePrevu = dateTimePicker1.Text;
-            int nobreJours = int.Parse(txtNbreJrs.Text);
-            decimal montant = decimal.Parse(txtmontant.Text);
-            string datePaye = ;
+            int bdnumChambre = int.Parse(txtNumChbre.Text);
+            string bdtypeChambre = txtTypeChambre.Text;
+            string bdNomCategorie = txtCategorieChbre.Text;
+            string bddatePrevu = dateTimePicker1.Text;
+            int bdnobreJours = int.Parse(txtNbreJrs.Text);
+            decimal bdmontant = decimal.Parse(txtmontant.Text);
+            string bddatePaye = DateR;
 
 
             if (getDo.nom == "")
@@ -143,8 +144,8 @@ namespace reservation
                     string querryInsert2 = "INSERT INTO [dbo].[tChambre] (numChambre, typeChambre) VALUES (@numChambre, @typeChambre) ";
 
                     SqlCommand command2 = new SqlCommand(querryInsert2, sqlconn.reqSql);
-                    command2.Parameters.AddWithValue("@numChambre", );
-                    command2.Parameters.AddWithValue("@typeChambre", );
+                    command2.Parameters.AddWithValue("@numChambre", bdnumChambre);
+                    command2.Parameters.AddWithValue("@typeChambre", bdtypeChambre);
                                    
                     command2.ExecuteNonQuery();
 
@@ -152,11 +153,7 @@ namespace reservation
                     string querryInsert3 = "INSERT INTO [dbo].[tCategorieCh] (nomCategorie) VALUES (@nomCategorie) ";
 
                     SqlCommand command3 = new SqlCommand(querryInsert3, sqlconn.reqSql);
-                    command3.Parameters.AddWithValue("@Nom", );
-                    command3.Parameters.AddWithValue("@PostNom", );
-                    command3.Parameters.AddWithValue("@Prenom", );
-                    command3.Parameters.AddWithValue("@Sexe", );
-                    command3.Parameters.AddWithValue("@Tel", );
+                    command3.Parameters.AddWithValue("@nomCategorie", bdNomCategorie);
 
                     command3.ExecuteNonQuery();
 
@@ -164,11 +161,8 @@ namespace reservation
                     string querryInsert4 = "INSERT INTO [dbo].[tPayement] (montant, datePayement) VALUES (@montant, @datePayement) ";
 
                     SqlCommand command4 = new SqlCommand(querryInsert4, sqlconn.reqSql);
-                    command4.Parameters.AddWithValue("@Nom",);
-                    command4.Parameters.AddWithValue("@PostNom", );
-                    command4.Parameters.AddWithValue("@Prenom", );
-                    command4.Parameters.AddWithValue("@Sexe", );
-                    command4.Parameters.AddWithValue("@Tel", );
+                    command4.Parameters.AddWithValue("@montant", bdmontant);
+                    command4.Parameters.AddWithValue("@datePayement", bddatePaye);
 
                     command4.ExecuteNonQuery();
 
@@ -176,11 +170,8 @@ namespace reservation
                     string querryInsert5 = "INSERT INTO [dbo].[tReservation] (datePrevu, nombreJours) VALUES (@datePrevu, @nombreJours) ";
 
                     SqlCommand command5 = new SqlCommand(querryInsert5, sqlconn.reqSql);
-                    command5.Parameters.AddWithValue("@Nom", );
-                    command5.Parameters.AddWithValue("@PostNom", );
-                    command5.Parameters.AddWithValue("@Prenom", );
-                    command5.Parameters.AddWithValue("@Sexe", );
-                    command5.Parameters.AddWithValue("@Tel", );
+                    command5.Parameters.AddWithValue("@datePrevu", bddatePrevu);
+                    command5.Parameters.AddWithValue("@nombreJours", bdnobreJours);
 
                     command5.ExecuteNonQuery();
 
