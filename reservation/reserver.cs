@@ -24,7 +24,6 @@ namespace reservation
 
             InitializeComponent();
 
-            afficherData();
         }
 
 
@@ -96,7 +95,6 @@ namespace reservation
         public void checkData()
         {
             getdata getDo = new getdata();
-            sendDonnee sd = new sendDonnee();
             DateTime dat = DateTime.Now;
             string DateR = dat.ToString("dddd, dd MMMM yyyy HH:mm:ss");
 
@@ -131,26 +129,25 @@ namespace reservation
                     string querryInsert = @"INSERT INTO[dbo].[tCategorieCh] (nomCategorie) VALUES(@nomCategorie);
                                             INSERT INTO[dbo].[tChambre] (numChambre, typeChambre) VALUES(@numChambre, @typeChambre);
                                             INSERT INTO [dbo].[tPayement] (montant, datePayement) VALUES(@montant, @datePayement);
-                                            INSERT INTO [dbo].[tClient] (nom, postNom, prenom, sexe, tel) VALUES (@Nom, @PostNom, @Prenom, @Sexe, @Tel);  
+                                            INSERT INTO [dbo].[tclient] (nom, postNom, prenom, sexe, tel) VALUES (@Nom, @PostNom, @Prenom, @Sexe, @Tel);  
                                             INSERT INTO [dbo].[tReservation] (datePrevu, nombreJours) VALUES (@datePrevu, @nombreJours) ";
 
 
                     SqlCommand command = new SqlCommand(querryInsert, sqlconn.reqSql);
+
+                    command.Parameters.AddWithValue("@nomCategorie", bdNomCategorie);
+
+                    command.Parameters.AddWithValue("@numChambre", bdnumChambre);
+                    command.Parameters.AddWithValue("@typeChambre", bdtypeChambre);
+
+                    command.Parameters.AddWithValue("@montant", bdmontant);
+                    command.Parameters.AddWithValue("@datePayement", bddatePaye);
 
                     command.Parameters.AddWithValue("@Nom", nom);
                     command.Parameters.AddWithValue("@PostNom", postNom);
                     command.Parameters.AddWithValue("@Prenom", prenom);
                     command.Parameters.AddWithValue("@Sexe", sexe);
                     command.Parameters.AddWithValue("@Tel", phone);
-
-                    command.Parameters.AddWithValue("@numChambre", bdnumChambre);
-                    command.Parameters.AddWithValue("@typeChambre", bdtypeChambre);
-
-                    command.Parameters.AddWithValue("@nomCategorie", bdNomCategorie);
-
-                    command.Parameters.AddWithValue("@montant", bdmontant);
-                    command.Parameters.AddWithValue("@datePayement", bddatePaye);
-
 
                     command.Parameters.AddWithValue("@datePrevu", bddatePrevu);
                     command.Parameters.AddWithValue("@nombreJours", bdnobreJours);
@@ -176,25 +173,61 @@ namespace reservation
                 }
             }
         }
-        public class sendDonnee
-        {
-            
-            public string nom { get; set; }
-            public string postNom { get; set; }
-            public string prenom { get; set; }
-            public string sexe { get; set; }
-            public string phone { get; set; }
 
-            public void afficher()
-            {
-                MessageBox.Show("Nom encapsuler  :   " + nom + postNom + prenom + sexe + phone);
-                
-            }
-        }
      
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        public void afficherDonnee()
+        {
+            connxion_bd sqlconn = new connxion_bd();
+            try
+            {         
+                string reqSelect = "SELECT * FROM [dbo].[tClient]";
+
+                using (SqlCommand cmd = new SqlCommand(reqSelect, sqlconn.reqSql))
+                {
+                    using (SqlDataReader readDonnee = cmd.ExecuteReader())
+                    {
+                        while (readDonnee.Read())
+                        {
+                            string nombd = readDonnee["nom"].ToString();
+                            string postNombd = readDonnee["postNom"].ToString();
+                            string prenombd = readDonnee["prenom"].ToString();
+                            string sexebd = readDonnee["sexe"].ToString();
+                            string telbd = readDonnee["tel"].ToString();
+                            string datedb = readDonnee["datePrevu"].ToString();
+                            string nbreJoursbd = readDonnee["nombreJours"].ToString();
+                            string typeChambrebd = readDonnee["typeChambre"].ToString();
+                            string categorieChbrebd = readDonnee["nomCategorie"].ToString();
+                            string numChambrebd = readDonnee["numChambre"].ToString();
+                            string montantPayebd = readDonnee["montant"].ToString();
+
+                            dataGridView1.Rows.Add(nombd, postNombd, prenombd, sexebd, telbd, datedb, nbreJoursbd, typeChambrebd, categorieChbrebd, numChambrebd, montantPayebd);
+
+                        }
+                        readDonnee.Close();
+                        readDonnee.Dispose();
+                        cmd.Dispose();
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Echec !! " + ex.Message);
+            }
+            finally
+            {
+                MessageBox.Show("Finaly!! ");
+                if (sqlconn.reqSql != null && sqlconn.reqSql.State == ConnectionState.Open)
+                {
+                    sqlconn.reqSql.Close();
+                }
+            }
         }
 
     }
