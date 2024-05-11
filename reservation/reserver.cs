@@ -92,34 +92,45 @@ namespace reservation
 
         private void button1_Click(object sender, EventArgs e)
         {
-            getdata getDo = new getdata();
-            insertInDb isr = new insertInDb();
-
-            getDo.nom = txtnom.Text;
-            getDo.postNom = txtpostnom.Text;
-            getDo.prenom = txtprenom.Text;
-            getDo.sexe = txtsexe.Text;
-            getDo.phone = txtphone.Text;
-
-            if (getDo.nom == "") 
-            {
-                MessageBox.Show("Le nom est null");
-            } else {
-                MessageBox.Show("Le nom  est : " + getDo.nom);
-                send();
-                //isr.dataInsert();
-            }
-
-
 
         }
-        public void send()
-        {   
-            //string Nom = txtnom.Text;
-            //string PostNom = txtprenom.Text;
-            //string prenom = txtprenom.Text;
-            //string sexe = txtsexe.Text;
-            //string tel = txtphone.Text;
+        public void checkData()
+        {
+            getdata getDo = new getdata();
+            insertInDb isr = new insertInDb();
+            sendDonnee sd = new sendDonnee();
+
+            string nomR = txtnom.Text;
+            string postNomR = txtpostnom.Text;
+            string prenomR = txtprenom.Text;
+            string sexeR = txtsexe.Text;
+            string phoneR = txtphone.Text;
+
+            if (getDo.nom == "")
+            {
+                MessageBox.Show("Le nom est null");
+            }
+            else
+            {
+                MessageBox.Show("Le nom  est : " + nomR);
+                sd.send();
+                //isr.dataInsert();
+            }
+        }
+        partial class sendDonnee
+        {
+            public void send()
+            {
+                reserver rsv = new reserver();
+                rsv.checkData();
+                string nom = rsv.nomR;
+                string postNom = rsv.txtpostnom.Text;
+                string prenom = rsv.txtprenom.Text;
+                string sexe = rsv.txtsexe.Text;
+                string phone = rsv.txtphone.Text;
+
+                MessageBox.Show("Données entrée : " + nom + postNom + prenom + sexe + phone);
+            }
         }
                   
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

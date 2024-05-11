@@ -17,7 +17,7 @@ namespace insererDonnee
         public void dataInsert()
         {
             reserver rsv = new reserver();
-            rsv.send();
+            //rsv.send();
 
             connxion_bd sqlconn = new connxion_bd();
             getdata gdat = new getdata();
