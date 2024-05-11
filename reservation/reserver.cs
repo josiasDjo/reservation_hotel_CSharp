@@ -128,54 +128,36 @@ namespace reservation
                 try
                 {
 
-                    string querryInsert1 = "INSERT INTO [dbo].[tClient] (nom, postNom, prenom, sexe, tel) VALUES (@Nom, @PostNom, @Prenom, @Sexe, @Tel) ";
-
-                    SqlCommand command1 = new SqlCommand(querryInsert1, sqlconn.reqSql);
-
-                    command1.Parameters.AddWithValue("@Nom", nom);
-                    command1.Parameters.AddWithValue("@PostNom", postNom);
-                    command1.Parameters.AddWithValue("@Prenom", prenom);
-                    command1.Parameters.AddWithValue("@Sexe", sexe);
-                    command1.Parameters.AddWithValue("@Tel", phone);
-
-                    command1.ExecuteNonQuery();
+                    string querryInsert = @"INSERT INTO [dbo].[tClient] (nom, postNom, prenom, sexe, tel) VALUES (@Nom, @PostNom, @Prenom, @Sexe, @Tel);
+                                            INSERT INTO[dbo].[tChambre] (numChambre, typeChambre) VALUES(@numChambre, @typeChambre);
+                                            INSERT INTO[dbo].[tCategorieCh] (nomCategorie) VALUES(@nomCategorie);
+                                            INSERT INTO [dbo].[tPayement] (montant, datePayement) VALUES(@montant, @datePayement);
+                                            INSERT INTO [dbo].[tReservation] (datePrevu, nombreJours) VALUES (@datePrevu, @nombreJours) ";
 
 
-                    string querryInsert2 = "INSERT INTO [dbo].[tChambre] (numChambre, typeChambre) VALUES (@numChambre, @typeChambre) ";
+                    SqlCommand command = new SqlCommand(querryInsert, sqlconn.reqSql);
 
-                    SqlCommand command2 = new SqlCommand(querryInsert2, sqlconn.reqSql);
-                    command2.Parameters.AddWithValue("@numChambre", bdnumChambre);
-                    command2.Parameters.AddWithValue("@typeChambre", bdtypeChambre);
-                                   
-                    command2.ExecuteNonQuery();
+                    command.Parameters.AddWithValue("@Nom", nom);
+                    command.Parameters.AddWithValue("@PostNom", postNom);
+                    command.Parameters.AddWithValue("@Prenom", prenom);
+                    command.Parameters.AddWithValue("@Sexe", sexe);
+                    command.Parameters.AddWithValue("@Tel", phone);
 
+                    command.Parameters.AddWithValue("@numChambre", bdnumChambre);
+                    command.Parameters.AddWithValue("@typeChambre", bdtypeChambre);
 
-                    string querryInsert3 = "INSERT INTO [dbo].[tCategorieCh] (nomCategorie) VALUES (@nomCategorie) ";
+                    command.Parameters.AddWithValue("@nomCategorie", bdNomCategorie);
 
-                    SqlCommand command3 = new SqlCommand(querryInsert3, sqlconn.reqSql);
-                    command3.Parameters.AddWithValue("@nomCategorie", bdNomCategorie);
-
-                    command3.ExecuteNonQuery();
-
-
-                    string querryInsert4 = "INSERT INTO [dbo].[tPayement] (montant, datePayement) VALUES (@montant, @datePayement) ";
-
-                    SqlCommand command4 = new SqlCommand(querryInsert4, sqlconn.reqSql);
-                    command4.Parameters.AddWithValue("@montant", bdmontant);
-                    command4.Parameters.AddWithValue("@datePayement", bddatePaye);
-
-                    command4.ExecuteNonQuery();
+                    command.Parameters.AddWithValue("@montant", bdmontant);
+                    command.Parameters.AddWithValue("@datePayement", bddatePaye);
 
 
-                    string querryInsert5 = "INSERT INTO [dbo].[tReservation] (datePrevu, nombreJours) VALUES (@datePrevu, @nombreJours) ";
-
-                    SqlCommand command5 = new SqlCommand(querryInsert5, sqlconn.reqSql);
-                    command5.Parameters.AddWithValue("@datePrevu", bddatePrevu);
-                    command5.Parameters.AddWithValue("@nombreJours", bdnobreJours);
-
-                    command5.ExecuteNonQuery();
+                    command.Parameters.AddWithValue("@datePrevu", bddatePrevu);
+                    command.Parameters.AddWithValue("@nombreJours", bdnobreJours);
 
 
+                    command.ExecuteNonQuery();
+                   
 
                     MessageBox.Show("Enregistrement réussi !! ");
                     sqlconn.reqSql.Close();
