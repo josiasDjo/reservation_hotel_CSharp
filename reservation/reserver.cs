@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using connexionDB;
-using insererDonnee;
 using getdataNames;
 using affichageDonnee;
 
@@ -97,14 +96,22 @@ namespace reservation
         public void checkData()
         {
             getdata getDo = new getdata();
-            insertInDb isr = new insertInDb();
             sendDonnee sd = new sendDonnee();
+            string DateR = DateTime.Today();
 
-            string nomR = txtnom.Text;
-            string postNomR = txtpostnom.Text;
-            string prenomR = txtprenom.Text;
-            string sexeR = txtsexe.Text;
-            string phoneR = txtphone.Text;
+            string nom = txtnom.Text;
+            string postNom = txtpostnom.Text;
+            string prenom = txtprenom.Text;
+            string sexe = txtsexe.Text;
+            string phone = txtphone.Text;
+            int numChambre = int.Parse(txtNumChbre.Text);
+            string typeChambre = txtTypeChambre.Text;
+            string NomCat = txtCategorieChbre.Text;
+            string datePrevu = dateTimePicker1.Text;
+            int nobreJours = int.Parse(txtNbreJrs.Text);
+            decimal montant = decimal.Parse(txtmontant.Text);
+            string datePaye = ;
+
 
             if (getDo.nom == "")
             {
@@ -112,20 +119,93 @@ namespace reservation
             }
             else
             {
-                MessageBox.Show("Le nom  est : " + nomR + postNomR + prenomR + sexeR + phoneR);
-                sd.nom = nomR;
-                sd.postNom = postNomR;
-                sd.prenom = prenomR;
-                sd.sexe = sexeR;
-                sd.phone = phoneR;
+                MessageBox.Show("Le nom  est : " + nom + postNom + prenom + sexe + phone);
+                connxion_bd sqlconn = new connxion_bd();
 
-                sd.afficher();
-                //isr.dataInsert();
+                sqlconn.sendConn();
+
+                try
+                {
+
+                    string querryInsert1 = "INSERT INTO [dbo].[tClient] (nom, postNom, prenom, sexe, tel) VALUES (@Nom, @PostNom, @Prenom, @Sexe, @Tel) ";
+
+                    SqlCommand command1 = new SqlCommand(querryInsert1, sqlconn.reqSql);
+
+                    command1.Parameters.AddWithValue("@Nom", nom);
+                    command1.Parameters.AddWithValue("@PostNom", postNom);
+                    command1.Parameters.AddWithValue("@Prenom", prenom);
+                    command1.Parameters.AddWithValue("@Sexe", sexe);
+                    command1.Parameters.AddWithValue("@Tel", phone);
+
+                    command1.ExecuteNonQuery();
+
+
+                    string querryInsert2 = "INSERT INTO [dbo].[tChambre] (numChambre, typeChambre) VALUES (@numChambre, @typeChambre) ";
+
+                    SqlCommand command2 = new SqlCommand(querryInsert2, sqlconn.reqSql);
+                    command2.Parameters.AddWithValue("@numChambre", );
+                    command2.Parameters.AddWithValue("@typeChambre", );
+                                   
+                    command2.ExecuteNonQuery();
+
+
+                    string querryInsert3 = "INSERT INTO [dbo].[tCategorieCh] (nomCategorie) VALUES (@nomCategorie) ";
+
+                    SqlCommand command3 = new SqlCommand(querryInsert3, sqlconn.reqSql);
+                    command3.Parameters.AddWithValue("@Nom", );
+                    command3.Parameters.AddWithValue("@PostNom", );
+                    command3.Parameters.AddWithValue("@Prenom", );
+                    command3.Parameters.AddWithValue("@Sexe", );
+                    command3.Parameters.AddWithValue("@Tel", );
+
+                    command3.ExecuteNonQuery();
+
+
+                    string querryInsert4 = "INSERT INTO [dbo].[tPayement] (montant, datePayement) VALUES (@montant, @datePayement) ";
+
+                    SqlCommand command4 = new SqlCommand(querryInsert4, sqlconn.reqSql);
+                    command4.Parameters.AddWithValue("@Nom",);
+                    command4.Parameters.AddWithValue("@PostNom", );
+                    command4.Parameters.AddWithValue("@Prenom", );
+                    command4.Parameters.AddWithValue("@Sexe", );
+                    command4.Parameters.AddWithValue("@Tel", );
+
+                    command4.ExecuteNonQuery();
+
+
+                    string querryInsert5 = "INSERT INTO [dbo].[tReservation] (datePrevu, nombreJours) VALUES (@datePrevu, @nombreJours) ";
+
+                    SqlCommand command5 = new SqlCommand(querryInsert5, sqlconn.reqSql);
+                    command5.Parameters.AddWithValue("@Nom", );
+                    command5.Parameters.AddWithValue("@PostNom", );
+                    command5.Parameters.AddWithValue("@Prenom", );
+                    command5.Parameters.AddWithValue("@Sexe", );
+                    command5.Parameters.AddWithValue("@Tel", );
+
+                    command5.ExecuteNonQuery();
+
+
+
+                    MessageBox.Show("Enregistrement réussi !! ");
+                    sqlconn.reqSql.Close();
+
+                }
+                catch (Exception exc)
+                {
+                    MessageBox.Show("Une erreur est survenue ! " + exc);
+                }
+                finally
+                {
+                    if (sqlconn.reqSql != null && sqlconn.reqSql.State == ConnectionState.Open)
+                    {
+                        sqlconn.reqSql.Close();
+                    }
+                }
             }
         }
-        partial class sendDonnee
+        public class sendDonnee
         {
-            //reserver rsv = reserver();
+            
             public string nom { get; set; }
             public string postNom { get; set; }
             public string prenom { get; set; }
@@ -135,16 +215,18 @@ namespace reservation
             public void afficher()
             {
                 MessageBox.Show("Nom encapsuler  :   " + nom + postNom + prenom + sexe + phone);
+                
             }
         }
-                  
+     
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
-
-
     }
+
+
+
 
 }
