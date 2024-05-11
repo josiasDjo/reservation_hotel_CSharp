@@ -44,6 +44,7 @@ namespace affichageDonnee
                             shwData.montantPayebd = readDonnee["montant"].ToString();
 
                             //dataGridView1.Rows.Add(nombd, postNombd, prenombd, sexebd, telbd, datedb, nbreJoursbd, typeChambrebd, categorieChbrebd, numChambrebd, montantPayebd);
+
                         }
                         readDonnee.Close();
                         readDonnee.Dispose();

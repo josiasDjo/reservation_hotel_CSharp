@@ -23,7 +23,7 @@ namespace reservation
         {
 
             InitializeComponent();
-
+            afficherDonnee();
         }
 
 
@@ -159,6 +159,8 @@ namespace reservation
                     MessageBox.Show("Enregistrement réussi !! ");
                     sqlconn.reqSql.Close();
 
+                    afficherDonnee();
+
                 }
                 catch (Exception exc)
                 {
@@ -183,9 +185,14 @@ namespace reservation
         public void afficherDonnee()
         {
             connxion_bd sqlconn = new connxion_bd();
+            sqlconn.sendConn();
             try
             {         
-                string reqSelect = "SELECT * FROM [dbo].[tClient]";
+                string reqSelect = @"SELECT * FROM [dbo].[tclient];
+                                    SELECT* FROM[dbo].[tChambre];
+                                    SELECT* FROM[dbo].[tCategorieCh];
+                                    SELECT* FROM[dbo].[tPayement];
+                                    SELECT* FROM[dbo].[tReservation];";
 
                 using (SqlCommand cmd = new SqlCommand(reqSelect, sqlconn.reqSql))
                 {

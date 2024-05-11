@@ -7,4 +7,3 @@ D:\vs 2015 project\reservation\reservation\obj\Debug\reservation.csproj.Generate
 D:\vs 2015 project\reservation\reservation\obj\Debug\reservation.exe
 D:\vs 2015 project\reservation\reservation\obj\Debug\reservation.pdb
 D:\vs 2015 project\reservation\reservation\obj\Debug\reservation.reserver.resources
-D:\vs 2015 project\reservation\reservation\obj\Debug\reservation.csprojResolveAssemblyReference.cache
