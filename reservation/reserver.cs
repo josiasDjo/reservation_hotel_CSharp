@@ -128,10 +128,10 @@ namespace reservation
                 try
                 {
 
-                    string querryInsert = @"INSERT INTO [dbo].[tClient] (nom, postNom, prenom, sexe, tel) VALUES (@Nom, @PostNom, @Prenom, @Sexe, @Tel);
+                    string querryInsert = @"INSERT INTO[dbo].[tCategorieCh] (nomCategorie) VALUES(@nomCategorie);
                                             INSERT INTO[dbo].[tChambre] (numChambre, typeChambre) VALUES(@numChambre, @typeChambre);
-                                            INSERT INTO[dbo].[tCategorieCh] (nomCategorie) VALUES(@nomCategorie);
                                             INSERT INTO [dbo].[tPayement] (montant, datePayement) VALUES(@montant, @datePayement);
+                                            INSERT INTO [dbo].[tClient] (nom, postNom, prenom, sexe, tel) VALUES (@Nom, @PostNom, @Prenom, @Sexe, @Tel);  
                                             INSERT INTO [dbo].[tReservation] (datePrevu, nombreJours) VALUES (@datePrevu, @nombreJours) ";
 
 
