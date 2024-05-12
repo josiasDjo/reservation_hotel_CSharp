@@ -198,45 +198,55 @@ namespace reservation
                 {
                     using (SqlDataReader readDonnee = cmd.ExecuteReader())
                     {
-                        while (readDonnee.Read())
+                        do
                         {
-                            string nombd = readDonnee["nom"].ToString();
-                            string postNombd = readDonnee["postNom"].ToString();
-                            string prenombd = readDonnee["prenom"].ToString();
-                            string sexebd = readDonnee["sexe"].ToString();
-                            string telbd = readDonnee["tel"].ToString();
-                            //string datedb = readDonnee["datePrevu"].ToString();
-                            //string nbreJoursbd = readDonnee["nombreJours"].ToString();
-                            //string typeChambrebd = readDonnee["typeChambre"].ToString();
-                            //string categorieChbrebd = readDonnee["nomCategorie"].ToString();
-                            //string numChambrebd = readDonnee["numChambre"].ToString();
-                            //string montantPayebd = readDonnee["montant"].ToString();
+                            while (readDonnee.Read())
+                            {
+                                string nombd = readDonnee["nom"].ToString();
+                                string postNombd = readDonnee["postNom"].ToString();
+                                string prenombd = readDonnee["prenom"].ToString();
+                                string sexebd = readDonnee["sexe"].ToString();
+                                string telbd = readDonnee["tel"].ToString();
+                                string datedb = readDonnee["datePrevu"].ToString();
+                                string nbreJoursbd = readDonnee["nombreJours"].ToString();
+                                string typeChambrebd = readDonnee["typeChambre"].ToString();
+                                string categorieChbrebd = readDonnee["nomCategorie"].ToString();
+                                string numChambrebd = readDonnee["numChambre"].ToString();
+                                string montantPayebd = readDonnee["montant"].ToString();
 
-                            int indexNouvelleLigne = dataGridView1.Rows.Add();
+                                int indexNouvelleLigne = dataGridView1.Rows.Add();
 
-                            // Accéder à la nouvelle ligne ajoutée
-                            DataGridViewRow nouvelleLigne = dataGridView1.Rows[indexNouvelleLigne];
+                                // Accéder à la nouvelle ligne ajoutée
+                                DataGridViewRow nouvelleLigne = dataGridView1.Rows[indexNouvelleLigne];
 
-                            // Définir les valeurs pour chaque cellule de la nouvelle ligne
-                            nouvelleLigne.Cells["colNom"].Value = nombd;
-                            nouvelleLigne.Cells["colPostNom"].Value = postNombd;
-                            nouvelleLigne.Cells["colPrenom"].Value = prenombd;
-                            nouvelleLigne.Cells["ColSexe"].Value = sexebd;
-                            nouvelleLigne.Cells["ColPhone"].Value = telbd;
+                                // Définir les valeurs pour chaque cellule de la nouvelle ligne
+                                nouvelleLigne.Cells["colNom"].Value = nombd;
+                                nouvelleLigne.Cells["colPostNom"].Value = postNombd;
+                                nouvelleLigne.Cells["colPrenom"].Value = prenombd;
+                                nouvelleLigne.Cells["ColSexe"].Value = sexebd;
+                                nouvelleLigne.Cells["ColPhone"].Value = telbd;
+                                nouvelleLigne.Cells["ColDate"].Value = datedb;
+                                nouvelleLigne.Cells["ColNbreJrs"].Value = nbreJoursbd;
+                                nouvelleLigne.Cells["ColTypeChambre"].Value = typeChambrebd;
+                                nouvelleLigne.Cells["ColCategorieChbre"].Value = categorieChbrebd;
+                                nouvelleLigne.Cells["NumChambre"].Value = numChambrebd;
+                                nouvelleLigne.Cells["ColMontant"].Value = montantPayebd; 
 
-                            // Ajoutez d'autres valeurs pour chaque colonne de votre DataGridView
 
 
+
+
+
+                                // Ajoutez d'autres valeurs pour chaque colonne de votre DataGridView
+
+
+                            }
                         }
+                        while (readDonnee.NextResult());
+
                         readDonnee.Close();
                         readDonnee.Dispose();
                         cmd.Dispose();
-
-                    }
-
-                    if (cmd.NextResult())
-                    {
-
                     }
                 }
 
