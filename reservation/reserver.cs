@@ -207,12 +207,17 @@ namespace reservation
                                 string prenombd = readDonnee["prenom"].ToString();
                                 string sexebd = readDonnee["sexe"].ToString();
                                 string telbd = readDonnee["tel"].ToString();
+
+                                string typeChambrebd = readDonnee["typeChambre"].ToString();
+                                string numChambrebd = readDonnee["numChambre"].ToString();
+
+                                string categorieChbrebd = readDonnee["nomCategorie"].ToString();
+
+                                string montantPayebd = readDonnee["montant"].ToString();
+
                                 string datedb = readDonnee["datePrevu"].ToString();
                                 string nbreJoursbd = readDonnee["nombreJours"].ToString();
-                                string typeChambrebd = readDonnee["typeChambre"].ToString();
-                                string categorieChbrebd = readDonnee["nomCategorie"].ToString();
-                                string numChambrebd = readDonnee["numChambre"].ToString();
-                                string montantPayebd = readDonnee["montant"].ToString();
+
 
                                 int indexNouvelleLigne = dataGridView1.Rows.Add();
 
@@ -231,14 +236,6 @@ namespace reservation
                                 nouvelleLigne.Cells["ColCategorieChbre"].Value = categorieChbrebd;
                                 nouvelleLigne.Cells["NumChambre"].Value = numChambrebd;
                                 nouvelleLigne.Cells["ColMontant"].Value = montantPayebd; 
-
-
-
-
-
-
-                                // Ajoutez d'autres valeurs pour chaque colonne de votre DataGridView
-
 
                             }
                         }
