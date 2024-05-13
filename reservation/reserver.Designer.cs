@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reserver));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.txtTypeChambre = new System.Windows.Forms.ComboBox();
             this.txtmontant = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.txtNbreJrs = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -65,18 +65,17 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.dbreservatonDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
-            this.txtsexe = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.txtNumChbre = new System.Windows.Forms.TextBox();
             this.txtCategorieChbre = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.err1 = new System.Windows.Forms.Label();
-            this.err2 = new System.Windows.Forms.Label();
+            this.button1 = new DevExpress.XtraEditors.SimpleButton();
+            this.modifier = new DevExpress.XtraEditors.SimpleButton();
+            this.supprimer = new DevExpress.XtraEditors.SimpleButton();
+            this.txtsexe = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbreservatonDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.db_reservatonDataSet)).BeginInit();
@@ -167,7 +166,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Yu Gothic Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(550, 274);
+            this.label7.Location = new System.Drawing.Point(550, 330);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(137, 23);
             this.label7.TabIndex = 0;
@@ -196,7 +195,7 @@
             this.txtTypeChambre.Items.AddRange(new object[] {
             "Chambre à lit simple",
             "Chambre à lit double"});
-            this.txtTypeChambre.Location = new System.Drawing.Point(693, 269);
+            this.txtTypeChambre.Location = new System.Drawing.Point(693, 325);
             this.txtTypeChambre.Name = "txtTypeChambre";
             this.txtTypeChambre.Size = new System.Drawing.Size(312, 28);
             this.txtTypeChambre.TabIndex = 5;
@@ -209,19 +208,6 @@
             this.txtmontant.Size = new System.Drawing.Size(312, 26);
             this.txtmontant.TabIndex = 2;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.button1.Font = new System.Drawing.Font("Yu Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(27, 443);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(312, 47);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Valider";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // txtNbreJrs
             // 
             this.txtNbreJrs.Location = new System.Drawing.Point(178, 327);
@@ -233,7 +219,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Yu Gothic Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(556, 327);
+            this.label9.Location = new System.Drawing.Point(556, 276);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(105, 23);
             this.label9.TabIndex = 1;
@@ -243,14 +229,14 @@
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colNom,
@@ -267,14 +253,14 @@
             this.dataGridView1.Location = new System.Drawing.Point(45, 515);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(972, 281);
+            this.dataGridView1.Size = new System.Drawing.Size(1355, 281);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // colNom
             // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            this.colNom.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            this.colNom.DefaultCellStyle = dataGridViewCellStyle6;
             this.colNom.HeaderText = "Nom";
             this.colNom.Name = "colNom";
             // 
@@ -344,7 +330,7 @@
             this.panel1.Controls.Add(this.label10);
             this.panel1.Location = new System.Drawing.Point(3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1072, 40);
+            this.panel1.Size = new System.Drawing.Size(1452, 40);
             this.panel1.TabIndex = 9;
             // 
             // label10
@@ -353,7 +339,7 @@
             this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.label10.Font = new System.Drawing.Font("Yu Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(403, 7);
+            this.label10.Location = new System.Drawing.Point(546, 7);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(271, 26);
             this.label10.TabIndex = 11;
@@ -362,23 +348,23 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.panel2.Controls.Add(this.label11);
+            this.panel2.Controls.Add(this.label14);
             this.panel2.Location = new System.Drawing.Point(3, 213);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1072, 38);
+            this.panel2.Size = new System.Drawing.Size(1452, 38);
             this.panel2.TabIndex = 9;
             // 
-            // label11
+            // label14
             // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label11.Font = new System.Drawing.Font("Yu Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(451, 7);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(208, 26);
-            this.label11.TabIndex = 11;
-            this.label11.Text = "Autres Informations";
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label14.Font = new System.Drawing.Font("Yu Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(580, 7);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(208, 26);
+            this.label14.TabIndex = 11;
+            this.label14.Text = "Autres Informations";
             // 
             // dbreservatonDataSetBindingSource1
             // 
@@ -394,13 +380,6 @@
             this.label3.Size = new System.Drawing.Size(54, 23);
             this.label3.TabIndex = 1;
             this.label3.Text = "Sexe";
-            // 
-            // txtsexe
-            // 
-            this.txtsexe.Location = new System.Drawing.Point(679, 111);
-            this.txtsexe.Name = "txtsexe";
-            this.txtsexe.Size = new System.Drawing.Size(312, 26);
-            this.txtsexe.TabIndex = 2;
             // 
             // label12
             // 
@@ -435,78 +414,104 @@
             this.txtCategorieChbre.Items.AddRange(new object[] {
             "VIP",
             "Standard"});
-            this.txtCategorieChbre.Location = new System.Drawing.Point(693, 328);
+            this.txtCategorieChbre.Location = new System.Drawing.Point(693, 277);
             this.txtCategorieChbre.Name = "txtCategorieChbre";
             this.txtCategorieChbre.Size = new System.Drawing.Size(312, 28);
             this.txtCategorieChbre.TabIndex = 5;
             this.txtCategorieChbre.SelectedIndexChanged += new System.EventHandler(this.txtTypeChambre_SelectedIndexChanged);
             // 
-            // button2
+            // button1
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.button2.Font = new System.Drawing.Font("Yu Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(392, 443);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(312, 47);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Supprimer";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.button1.Appearance.BorderColor = System.Drawing.Color.Gray;
+            this.button1.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.button1.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.button1.Appearance.Options.UseBackColor = true;
+            this.button1.Appearance.Options.UseBorderColor = true;
+            this.button1.Appearance.Options.UseFont = true;
+            this.button1.Appearance.Options.UseForeColor = true;
+            this.button1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.button1.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
+            this.button1.ImageOptions.SvgImageSize = new System.Drawing.Size(20, 20);
+            this.button1.Location = new System.Drawing.Point(1136, 259);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(10);
+            this.button1.Size = new System.Drawing.Size(284, 54);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Valider";
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // button3
+            // modifier
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.button3.Font = new System.Drawing.Font("Yu Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Location = new System.Drawing.Point(729, 443);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(312, 47);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Modifier";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button1_Click);
+            this.modifier.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.modifier.Appearance.BorderColor = System.Drawing.Color.Gray;
+            this.modifier.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.modifier.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.modifier.Appearance.Options.UseBackColor = true;
+            this.modifier.Appearance.Options.UseBorderColor = true;
+            this.modifier.Appearance.Options.UseFont = true;
+            this.modifier.Appearance.Options.UseForeColor = true;
+            this.modifier.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton2.ImageOptions.SvgImage")));
+            this.modifier.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
+            this.modifier.ImageOptions.SvgImageSize = new System.Drawing.Size(20, 20);
+            this.modifier.Location = new System.Drawing.Point(1136, 357);
+            this.modifier.Name = "modifier";
+            this.modifier.Padding = new System.Windows.Forms.Padding(10);
+            this.modifier.Size = new System.Drawing.Size(284, 54);
+            this.modifier.TabIndex = 10;
+            this.modifier.Text = "Modifier";
             // 
-            // err1
+            // supprimer
             // 
-            this.err1.AutoSize = true;
-            this.err1.ForeColor = System.Drawing.Color.Red;
-            this.err1.Location = new System.Drawing.Point(46, 94);
-            this.err1.Name = "err1";
-            this.err1.Size = new System.Drawing.Size(60, 20);
-            this.err1.TabIndex = 10;
-            this.err1.Text = "label14";
+            this.supprimer.Appearance.BackColor = System.Drawing.Color.Maroon;
+            this.supprimer.Appearance.BorderColor = System.Drawing.Color.Gray;
+            this.supprimer.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.supprimer.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.supprimer.Appearance.Options.UseBackColor = true;
+            this.supprimer.Appearance.Options.UseBorderColor = true;
+            this.supprimer.Appearance.Options.UseFont = true;
+            this.supprimer.Appearance.Options.UseForeColor = true;
+            this.supprimer.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton3.ImageOptions.SvgImage")));
+            this.supprimer.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
+            this.supprimer.ImageOptions.SvgImageSize = new System.Drawing.Size(20, 20);
+            this.supprimer.Location = new System.Drawing.Point(1136, 441);
+            this.supprimer.Name = "supprimer";
+            this.supprimer.Padding = new System.Windows.Forms.Padding(10);
+            this.supprimer.Size = new System.Drawing.Size(284, 54);
+            this.supprimer.TabIndex = 10;
+            this.supprimer.Text = "Supprimer";
             // 
-            // err2
+            // txtsexe
             // 
-            this.err2.AutoSize = true;
-            this.err2.ForeColor = System.Drawing.Color.Red;
-            this.err2.Location = new System.Drawing.Point(46, 147);
-            this.err2.Name = "err2";
-            this.err2.Size = new System.Drawing.Size(60, 20);
-            this.err2.TabIndex = 11;
-            this.err2.Text = "label15";
+            this.txtsexe.FormattingEnabled = true;
+            this.txtsexe.Items.AddRange(new object[] {
+            "Masculin",
+            "Féminin "});
+            this.txtsexe.Location = new System.Drawing.Point(679, 111);
+            this.txtsexe.Name = "txtsexe";
+            this.txtsexe.Size = new System.Drawing.Size(312, 28);
+            this.txtsexe.TabIndex = 11;
             // 
             // reserver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1063, 679);
-            this.Controls.Add(this.err2);
-            this.Controls.Add(this.err1);
+            this.AutoScroll = true;
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1449, 710);
+            this.Controls.Add(this.txtsexe);
+            this.Controls.Add(this.supprimer);
+            this.Controls.Add(this.modifier);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.txtCategorieChbre);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtTypeChambre);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.txtmontant);
             this.Controls.Add(this.txtNumChbre);
             this.Controls.Add(this.txtNbreJrs);
-            this.Controls.Add(this.txtsexe);
             this.Controls.Add(this.txtphone);
             this.Controls.Add(this.txtpostnom);
             this.Controls.Add(this.txtprenom);
@@ -522,6 +527,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
+            this.MinimumSize = new System.Drawing.Size(1471, 766);
             this.Name = "reserver";
             this.Text = "reserver";
             this.Load += new System.EventHandler(this.reserver_Load);
@@ -554,7 +560,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox txtTypeChambre;
         private System.Windows.Forms.TextBox txtmontant;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtNbreJrs;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -563,10 +568,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.BindingSource dbreservatonDataSetBindingSource1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtsexe;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNom;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPostNom;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrenom;
@@ -582,9 +585,10 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtNumChbre;
         private System.Windows.Forms.ComboBox txtCategorieChbre;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label err1;
-        private System.Windows.Forms.Label err2;
+        private System.Windows.Forms.Label label14;
+        private DevExpress.XtraEditors.SimpleButton button1;
+        private DevExpress.XtraEditors.SimpleButton modifier;
+        private DevExpress.XtraEditors.SimpleButton supprimer;
+        private System.Windows.Forms.ComboBox txtsexe;
     }
 }

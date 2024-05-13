@@ -90,7 +90,7 @@ namespace reservation
 
         private void button1_Click(object sender, EventArgs e)
         {
-            checkData();
+            //
         }
         public void checkData()
         {
@@ -187,66 +187,148 @@ namespace reservation
             connxion_bd sqlconn = new connxion_bd();
             sqlconn.sendConn();
             try
-            {         
-                string reqSelect = @"SELECT * FROM [dbo].[tclient];
-                                    SELECT* FROM[dbo].[tChambre];
-                                    SELECT* FROM[dbo].[tCategorieCh];
-                                    SELECT* FROM[dbo].[tPayement];
-                                    SELECT* FROM[dbo].[tReservation];";
+            {
+                string reqSelect1 = "SELECT * FROM [dbo].[tclient]";
+                string reqSelect2 = "SELECT * FROM[dbo].[tChambre]";
+                string reqSelect3 = "SELECT * FROM[dbo].[tCategorieCh]";
+                string reqSelect4 = "SELECT * FROM[dbo].[tPayement]";
+                string reqSelect5 = "SELECT * FROM[dbo].[tReservation]";
+   
+                int indexNouvelleLigne = dataGridView1.Rows.Add();
 
-                using (SqlCommand cmd = new SqlCommand(reqSelect, sqlconn.reqSql))
+                using (SqlCommand cmd = new SqlCommand(reqSelect1, sqlconn.reqSql))
                 {
+                    //from tclient
                     using (SqlDataReader readDonnee = cmd.ExecuteReader())
                     {
-                        do
+                        while (readDonnee.Read())
+                        {
+                            string nombd = readDonnee["nom"].ToString();
+                            string postNombd = readDonnee["postNom"].ToString();
+                            string prenombd = readDonnee["prenom"].ToString();
+                            string sexebd = readDonnee["sexe"].ToString();
+                            string telbd = readDonnee["tel"].ToString();
+
+                            // Accéder à la nouvelle ligne ajoutée
+                            DataGridViewRow nouvelleLigne = dataGridView1.Rows[indexNouvelleLigne];
+
+                            // Définir les valeurs pour chaque cellule de la nouvelle ligne
+                            nouvelleLigne.Cells["colNom"].Value = nombd;
+                            nouvelleLigne.Cells["colPostNom"].Value = postNombd;
+                            nouvelleLigne.Cells["colPrenom"].Value = prenombd;
+                            nouvelleLigne.Cells["ColSexe"].Value = sexebd;
+                            nouvelleLigne.Cells["ColPhone"].Value = telbd;
+
+                        }
+                        readDonnee.Close();
+                        readDonnee.Dispose();
+                        cmd.Dispose();
+                    }
+
+
+
+
+
+                    using (SqlCommand cmd2 = new SqlCommand(reqSelect2, sqlconn.reqSql))
+                    {
+                        //from tchambre
+                        using (SqlDataReader readDonnee = cmd2.ExecuteReader())
                         {
                             while (readDonnee.Read())
                             {
-                                string nombd = readDonnee["nom"].ToString();
-                                string postNombd = readDonnee["postNom"].ToString();
-                                string prenombd = readDonnee["prenom"].ToString();
-                                string sexebd = readDonnee["sexe"].ToString();
-                                string telbd = readDonnee["tel"].ToString();
-
                                 string typeChambrebd = readDonnee["typeChambre"].ToString();
                                 string numChambrebd = readDonnee["numChambre"].ToString();
 
-                                string categorieChbrebd = readDonnee["nomCategorie"].ToString();
-
-                                string montantPayebd = readDonnee["montant"].ToString();
-
-                                string datedb = readDonnee["datePrevu"].ToString();
-                                string nbreJoursbd = readDonnee["nombreJours"].ToString();
-
-
-                                int indexNouvelleLigne = dataGridView1.Rows.Add();
+                                //int indexNouvelleLigne = dataGridView1.Rows.Add();
 
                                 // Accéder à la nouvelle ligne ajoutée
                                 DataGridViewRow nouvelleLigne = dataGridView1.Rows[indexNouvelleLigne];
 
                                 // Définir les valeurs pour chaque cellule de la nouvelle ligne
-                                nouvelleLigne.Cells["colNom"].Value = nombd;
-                                nouvelleLigne.Cells["colPostNom"].Value = postNombd;
-                                nouvelleLigne.Cells["colPrenom"].Value = prenombd;
-                                nouvelleLigne.Cells["ColSexe"].Value = sexebd;
-                                nouvelleLigne.Cells["ColPhone"].Value = telbd;
-                                nouvelleLigne.Cells["ColDate"].Value = datedb;
-                                nouvelleLigne.Cells["ColNbreJrs"].Value = nbreJoursbd;
                                 nouvelleLigne.Cells["ColTypeChambre"].Value = typeChambrebd;
-                                nouvelleLigne.Cells["ColCategorieChbre"].Value = categorieChbrebd;
                                 nouvelleLigne.Cells["NumChambre"].Value = numChambrebd;
-                                nouvelleLigne.Cells["ColMontant"].Value = montantPayebd; 
 
                             }
+                            readDonnee.Close();
+                            readDonnee.Dispose();
+                            cmd2.Dispose();
                         }
-                        while (readDonnee.NextResult());
+                    }
+                    using (SqlCommand cmd3 = new SqlCommand(reqSelect3, sqlconn.reqSql))
+                    {
+                        //from tcategorieCh
+                        using (SqlDataReader readDonnee = cmd3.ExecuteReader())
+                        {
+                            while (readDonnee.Read())
+                            {
+                                string categorieChbrebd = readDonnee["nomCategorie"].ToString();
 
-                        readDonnee.Close();
-                        readDonnee.Dispose();
-                        cmd.Dispose();
+
+                                //int indexNouvelleLigne = dataGridView1.Rows.Add();
+
+                                // Accéder à la nouvelle ligne ajoutée
+                                DataGridViewRow nouvelleLigne = dataGridView1.Rows[indexNouvelleLigne];
+
+                                // Définir les valeurs pour chaque cellule de la nouvelle ligne
+                                nouvelleLigne.Cells["ColCategorieChbre"].Value = categorieChbrebd;
+
+                            }
+                            readDonnee.Close();
+                            readDonnee.Dispose();
+                            cmd3.Dispose();
+                        }
+                    }
+                    using (SqlCommand cmd4 = new SqlCommand(reqSelect4, sqlconn.reqSql))
+                    {
+                        //form tPayement
+                        using (SqlDataReader readDonnee = cmd4.ExecuteReader())
+                        {
+                            while (readDonnee.Read())
+                            {
+                                string montantPayebd = readDonnee["montant"].ToString();
+
+
+                                //int indexNouvelleLigne = dataGridView1.Rows.Add();
+
+                                // Accéder à la nouvelle ligne ajoutée
+                                DataGridViewRow nouvelleLigne = dataGridView1.Rows[indexNouvelleLigne];
+
+                                // Définir les valeurs pour chaque cellule de la nouvelle ligne
+                                nouvelleLigne.Cells["ColMontant"].Value = montantPayebd;
+
+                            }
+                            readDonnee.Close();
+                            readDonnee.Dispose();
+                            cmd4.Dispose();
+                        }
+                    }
+                    using (SqlCommand cmd5 = new SqlCommand(reqSelect5, sqlconn.reqSql))
+                    {
+                        //from tReservation
+                        using (SqlDataReader readDonnee = cmd5.ExecuteReader())
+                        {
+                            while (readDonnee.Read())
+                            {
+                                string datedb = readDonnee["datePrevu"].ToString();
+                                string nbreJourdb = readDonnee["nombreJours"].ToString();
+
+                                //int indexNouvelleLigne = dataGridView1.Rows.Add();
+
+                                // Accéder à la nouvelle ligne ajoutée
+                                DataGridViewRow nouvelleLigne = dataGridView1.Rows[indexNouvelleLigne];
+
+                                // Définir les valeurs pour chaque cellule de la nouvelle ligne
+                                nouvelleLigne.Cells["ColDate"].Value = datedb;
+                                nouvelleLigne.Cells["ColNbreJrs"].Value = nbreJourdb;
+
+                            }
+                            readDonnee.Close();
+                            readDonnee.Dispose();
+                            cmd5.Dispose();
+                        }
                     }
                 }
-
+                indexNouvelleLigne++;
             }
             catch (SqlException ex)
             {
@@ -254,7 +336,7 @@ namespace reservation
             }
             finally
             {
-                MessageBox.Show("Finaly!! ");
+                //MessageBox.Show("Finaly!! ");
                 if (sqlconn.reqSql != null && sqlconn.reqSql.State == ConnectionState.Open)
                 {
                     sqlconn.reqSql.Close();
@@ -262,6 +344,10 @@ namespace reservation
             }
         }
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            checkData();
+        }
     }
 
 
