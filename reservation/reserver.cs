@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using connexionDB;
 using getdataNames;
-using affichageDonnee;
+using reservation;
 
 
 
@@ -184,6 +184,8 @@ namespace reservation
 
         public void afficherDonnee()
         {
+            DataDisplayer afficherData = new DataDisplayer();
+            //afficherData.DisplayData();
             connxion_bd sqlconn = new connxion_bd();
             sqlconn.sendConn();
             try
@@ -193,7 +195,10 @@ namespace reservation
                 string reqSelect3 = "SELECT * FROM[dbo].[tCategorieCh]";
                 string reqSelect4 = "SELECT * FROM[dbo].[tPayement]";
                 string reqSelect5 = "SELECT * FROM[dbo].[tReservation]";
-   
+
+                SqlCommand cmdOne = new SqlCommand(reqSelect1, sqlconn.reqSql);
+
+                SqlDataReader readLigne = cmdOne.ExecuteNonQuery()
                 int indexNouvelleLigne = dataGridView1.Rows.Add();
 
                 using (SqlCommand cmd = new SqlCommand(reqSelect1, sqlconn.reqSql))
@@ -336,7 +341,6 @@ namespace reservation
             }
             finally
             {
-                //MessageBox.Show("Finaly!! ");
                 if (sqlconn.reqSql != null && sqlconn.reqSql.State == ConnectionState.Open)
                 {
                     sqlconn.reqSql.Close();
@@ -347,6 +351,16 @@ namespace reservation
         private void button1_Click_1(object sender, EventArgs e)
         {
             checkData();
+        }
+
+        //Afficher les données dans l" tableau ! 
+        public DataGridView DataGridViewInstance
+        {
+            get { return dataGridView1; }
+        }
+        public void AfficherDonneesDansDataGridView(DataTable dataTable)
+        {
+            dataGridView1.DataSource = dataTable;
         }
     }
 
