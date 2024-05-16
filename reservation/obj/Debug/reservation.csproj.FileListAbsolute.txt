@@ -26,3 +26,4 @@ D:\vs 2015 project\reservation\reservation\bin\Debug\DevExpress.XtraEditors.v23.
 D:\vs 2015 project\reservation\reservation\bin\Debug\DevExpress.Pdf.v23.2.Core.xml
 D:\vs 2015 project\reservation\reservation\bin\Debug\DevExpress.Pdf.v23.2.Drawing.xml
 D:\vs 2015 project\reservation\reservation\obj\Debug\reservation.exe.licenses
+D:\vs 2015 project\reservation\reservation\obj\Debug\reservation.csprojResolveAssemblyReference.cache

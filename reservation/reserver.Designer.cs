@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reserver));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -49,17 +49,6 @@
             this.txtNbreJrs = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.colNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPostNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColSexe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColNbreJrs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColTypeChambre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColCategorieChbre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumChambre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColMontant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dbreservatonDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.db_reservatonDataSet = new reservation.db_reservatonDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -76,6 +65,18 @@
             this.modifier = new DevExpress.XtraEditors.SimpleButton();
             this.supprimer = new DevExpress.XtraEditors.SimpleButton();
             this.txtsexe = new System.Windows.Forms.ComboBox();
+            this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPostNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColSexe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColNbreJrs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColTypeChambre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColCategorieChbre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumChambre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColMontant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbreservatonDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.db_reservatonDataSet)).BeginInit();
@@ -229,16 +230,17 @@
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idCol,
             this.colNom,
             this.colPostNom,
             this.colPrenom,
@@ -256,63 +258,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1355, 281);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // colNom
-            // 
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            this.colNom.DefaultCellStyle = dataGridViewCellStyle6;
-            this.colNom.HeaderText = "Nom";
-            this.colNom.Name = "colNom";
-            // 
-            // colPostNom
-            // 
-            this.colPostNom.HeaderText = "Post-Nom";
-            this.colPostNom.Name = "colPostNom";
-            // 
-            // colPrenom
-            // 
-            this.colPrenom.HeaderText = "Prénom";
-            this.colPrenom.Name = "colPrenom";
-            // 
-            // ColSexe
-            // 
-            this.ColSexe.HeaderText = "Sexe";
-            this.ColSexe.Name = "ColSexe";
-            // 
-            // ColPhone
-            // 
-            this.ColPhone.HeaderText = "Phone";
-            this.ColPhone.Name = "ColPhone";
-            // 
-            // ColDate
-            // 
-            this.ColDate.HeaderText = "Date";
-            this.ColDate.Name = "ColDate";
-            // 
-            // ColNbreJrs
-            // 
-            this.ColNbreJrs.HeaderText = "Nombre de Jours";
-            this.ColNbreJrs.Name = "ColNbreJrs";
-            // 
-            // ColTypeChambre
-            // 
-            this.ColTypeChambre.HeaderText = "Type de Chambre";
-            this.ColTypeChambre.Name = "ColTypeChambre";
-            // 
-            // ColCategorieChbre
-            // 
-            this.ColCategorieChbre.HeaderText = "Catégorie de chambre";
-            this.ColCategorieChbre.Name = "ColCategorieChbre";
-            // 
-            // NumChambre
-            // 
-            this.NumChambre.HeaderText = "N° ";
-            this.NumChambre.Name = "NumChambre";
-            // 
-            // ColMontant
-            // 
-            this.ColMontant.HeaderText = "Montant";
-            this.ColMontant.Name = "ColMontant";
             // 
             // dbreservatonDataSetBindingSource
             // 
@@ -430,7 +375,7 @@
             this.button1.Appearance.Options.UseBorderColor = true;
             this.button1.Appearance.Options.UseFont = true;
             this.button1.Appearance.Options.UseForeColor = true;
-            this.button1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.button1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("button1.ImageOptions.SvgImage")));
             this.button1.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
             this.button1.ImageOptions.SvgImageSize = new System.Drawing.Size(20, 20);
             this.button1.Location = new System.Drawing.Point(1136, 259);
@@ -451,7 +396,7 @@
             this.modifier.Appearance.Options.UseBorderColor = true;
             this.modifier.Appearance.Options.UseFont = true;
             this.modifier.Appearance.Options.UseForeColor = true;
-            this.modifier.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton2.ImageOptions.SvgImage")));
+            this.modifier.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("modifier.ImageOptions.SvgImage")));
             this.modifier.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
             this.modifier.ImageOptions.SvgImageSize = new System.Drawing.Size(20, 20);
             this.modifier.Location = new System.Drawing.Point(1136, 357);
@@ -471,7 +416,7 @@
             this.supprimer.Appearance.Options.UseBorderColor = true;
             this.supprimer.Appearance.Options.UseFont = true;
             this.supprimer.Appearance.Options.UseForeColor = true;
-            this.supprimer.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton3.ImageOptions.SvgImage")));
+            this.supprimer.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("supprimer.ImageOptions.SvgImage")));
             this.supprimer.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
             this.supprimer.ImageOptions.SvgImageSize = new System.Drawing.Size(20, 20);
             this.supprimer.Location = new System.Drawing.Point(1136, 441);
@@ -491,6 +436,68 @@
             this.txtsexe.Name = "txtsexe";
             this.txtsexe.Size = new System.Drawing.Size(312, 28);
             this.txtsexe.TabIndex = 11;
+            // 
+            // idCol
+            // 
+            this.idCol.HeaderText = "N°";
+            this.idCol.Name = "idCol";
+            // 
+            // colNom
+            // 
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            this.colNom.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colNom.HeaderText = "Nom";
+            this.colNom.Name = "colNom";
+            // 
+            // colPostNom
+            // 
+            this.colPostNom.HeaderText = "Post-Nom";
+            this.colPostNom.Name = "colPostNom";
+            // 
+            // colPrenom
+            // 
+            this.colPrenom.HeaderText = "Prénom";
+            this.colPrenom.Name = "colPrenom";
+            // 
+            // ColSexe
+            // 
+            this.ColSexe.HeaderText = "Sexe";
+            this.ColSexe.Name = "ColSexe";
+            // 
+            // ColPhone
+            // 
+            this.ColPhone.HeaderText = "Phone";
+            this.ColPhone.Name = "ColPhone";
+            // 
+            // ColDate
+            // 
+            this.ColDate.HeaderText = "Date";
+            this.ColDate.Name = "ColDate";
+            // 
+            // ColNbreJrs
+            // 
+            this.ColNbreJrs.HeaderText = "Nombre de Jours";
+            this.ColNbreJrs.Name = "ColNbreJrs";
+            // 
+            // ColTypeChambre
+            // 
+            this.ColTypeChambre.HeaderText = "Type de Chambre";
+            this.ColTypeChambre.Name = "ColTypeChambre";
+            // 
+            // ColCategorieChbre
+            // 
+            this.ColCategorieChbre.HeaderText = "Catégorie de chambre";
+            this.ColCategorieChbre.Name = "ColCategorieChbre";
+            // 
+            // NumChambre
+            // 
+            this.NumChambre.HeaderText = "N° Chambre";
+            this.NumChambre.Name = "NumChambre";
+            // 
+            // ColMontant
+            // 
+            this.ColMontant.HeaderText = "Montant";
+            this.ColMontant.Name = "ColMontant";
             // 
             // reserver
             // 
@@ -570,6 +577,16 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.BindingSource dbreservatonDataSetBindingSource1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtNumChbre;
+        private System.Windows.Forms.ComboBox txtCategorieChbre;
+        private System.Windows.Forms.Label label14;
+        private DevExpress.XtraEditors.SimpleButton button1;
+        private DevExpress.XtraEditors.SimpleButton modifier;
+        private DevExpress.XtraEditors.SimpleButton supprimer;
+        private System.Windows.Forms.ComboBox txtsexe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNom;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPostNom;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrenom;
@@ -581,14 +598,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColCategorieChbre;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumChambre;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColMontant;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtNumChbre;
-        private System.Windows.Forms.ComboBox txtCategorieChbre;
-        private System.Windows.Forms.Label label14;
-        private DevExpress.XtraEditors.SimpleButton button1;
-        private DevExpress.XtraEditors.SimpleButton modifier;
-        private DevExpress.XtraEditors.SimpleButton supprimer;
-        private System.Windows.Forms.ComboBox txtsexe;
     }
 }
