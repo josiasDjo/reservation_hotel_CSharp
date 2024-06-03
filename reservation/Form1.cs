@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-
+// fgfgfgfgfg
 namespace reservation
 {
     public partial class Form1 : Form
@@ -17,7 +17,7 @@ namespace reservation
         public Form1()
         {
             //
-
+            InitializationEventAttribute()
             InitializeComponent();
         }
 
