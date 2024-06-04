@@ -23,8 +23,10 @@ namespace reservation
 
         private void reserverClick(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            /*reserver reserverShow = new reserver();
-            reserverShow.Show();*/
+            // commentaire 
+            reserver reserverShow = new reserver();
+            reserverShow.Show();
+            // commentaire 
         }
 
         private void button1_Click(object sender, EventArgs e)
