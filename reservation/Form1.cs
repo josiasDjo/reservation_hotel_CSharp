@@ -17,7 +17,7 @@ namespace reservation
         public Form1()
         {
             //
-            InitializationEventAttribute()
+            // InitializationEventAttribute()
             InitializeComponent();
         }
 
@@ -27,6 +27,7 @@ namespace reservation
             reserver reserverShow = new reserver();
             reserverShow.Show();
             // commentaire 
+            // commentaire show error with error message
         }
 
         private void button1_Click(object sender, EventArgs e)
